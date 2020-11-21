@@ -13,6 +13,7 @@ import { Force } from './Force';
   `,
   styles: [],
 })
+
 export class ForceListComponent implements OnInit {
   constructor() {}
 
@@ -39,6 +40,5 @@ export class ForceListComponent implements OnInit {
       telephone: '123',
     },
   ];
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 }

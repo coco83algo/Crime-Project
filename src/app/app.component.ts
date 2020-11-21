@@ -5,12 +5,11 @@ import { Component } from '@angular/core';
   template: `
     <!--The content below is only a placeholder and can be replaced.-->
     <div class="content">
-      <h1>
-        Welcome to {{title}}!
-      </h1>
+      <h1>Welcome to {{ title }}!</h1>
       <cpa-force-list></cpa-force-list>
-    `  ,
-  styles: []
+    </div>
+  `,
+  styles: [],
 })
 export class AppComponent {
   title = 'Crime-Project';

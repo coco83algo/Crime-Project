@@ -4,9 +4,7 @@ import { Force } from './Force';
 @Component({
   selector: 'cpa-force-details',
   template: `
-    <p>
-      get details
-    </p>
+    <p>get details</p>
     <!-- Pour l'instant je ne l'ai pas mis parce que ça ne fonctionne pas
     Mais ça sera la forme finale pour les détails d'une force affichée
     <div>Unique force identifier : {{force.id}} </div>
@@ -15,14 +13,12 @@ import { Force } from './Force';
     <div>Force website URL : {{force.url}} </div>
     <div>Force telephone number : {{force.telephone}} </div> -->
   `,
-  styles: [
-  ]
+  styles: [],
 })
+
 export class ForceDetailsComponent implements OnInit {
   @Input() force!: Force;
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

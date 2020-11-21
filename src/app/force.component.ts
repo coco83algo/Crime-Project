@@ -9,16 +9,13 @@ import { Force } from './Force';
       <cpa-force-details></cpa-force-details>
     </span>
   `,
-  styles: [
-  ]
+  styles: [],
 })
 
 export class ForceComponent implements OnInit {
   @Input() force!: Force;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
