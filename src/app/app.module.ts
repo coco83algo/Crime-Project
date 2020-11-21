@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ForceListComponent } from './force-list.component';
 import { ForceComponent } from './force.component';
+import { ForceDetailsComponent } from './force-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ForceListComponent,
-    ForceComponent
+    ForceComponent,
+    ForceDetailsComponent
   ],
   imports: [
     BrowserModule,
