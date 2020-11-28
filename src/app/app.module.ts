@@ -3,9 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ForceListComponent } from './force-list.component';
-import { ForceComponent } from './force.component';
-import { ForceDetailsComponent } from './force-details.component';
+import { ForceListComponent } from './Components/force-list-component/force-list.component';
+import { ForceComponent } from './Components/force-component/force.component';
+import { ForceDetailsComponent } from './Components/force-details-component/force-details.component';
 
 @NgModule({
   declarations: [

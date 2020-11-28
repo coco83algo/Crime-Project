@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Force } from './Force';
+import { Force } from '../../Interfaces/Force';
 
 @Component({
   selector: 'cpa-force-details',
