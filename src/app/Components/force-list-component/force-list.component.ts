@@ -4,6 +4,7 @@ import { ForceDetails } from '../../Interfaces/ForceDetails';
 import { ForceOfficer } from '../../Interfaces/ForceOfficer';
 import { ForcesListService } from '../../Services/forces-list-service/forces-list.service';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'cpa-force-list',
@@ -17,11 +18,11 @@ import { HttpClient } from '@angular/common/http';
     <div>
     <button (click)="getForces()">Show all Forces</button>
     <ul>
-       <li *ngFor="let currentForce of forceList">
+       <li *ngFor="let currentForce of forceList | async">
           <cpa-force [force]="currentForce"></cpa-force>
           <button (click)="getForceDetails(currentForce)">Details</button>
           <button (click)="getForceOfficers(currentForce)">Officers</button>
-          <!--<cpa-force-details [forceDetail]="forceListDetails"></cpa-force-details>-->
+          <cpa-force-details *ngIf="currentForce === selected" [forceDetail]="forceListDetails | async"></cpa-force-details>
        </li>
     </ul>
    <!-- <ul>
@@ -41,11 +42,12 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class ForceListComponent implements OnInit {
-  forceList: Force[] = [];
-  forceListDetails!: ForceDetails;
-  forceListOfficers: ForceOfficer[] = [];
+  forceList!: Observable<Force[]>;
+  forceListDetails!: Observable<ForceDetails>;
+  forceListOfficers!: Observable<ForceOfficer[]>;
   forces!: Force[];
   isOfficerDisplay = false;
+  selected!: Force;
 
   constructor(private forceslistService: ForcesListService, private httpClient: HttpClient) {}
 
@@ -59,10 +61,12 @@ export class ForceListComponent implements OnInit {
   getForceDetails(currentForce: Force): void{
     this.forceListDetails = this.forceslistService.getForceDetailsFromServer(currentForce.id);
     console.log('Recu dans list:' + this.forceListDetails);
+    this.selected = currentForce;
   }
 
   getForceOfficers(currentForce: Force): void{
     this.forceListOfficers = this.forceslistService.getForceOfficersFromServer(currentForce.id);
+    this.selected = currentForce;
   }
 
 }

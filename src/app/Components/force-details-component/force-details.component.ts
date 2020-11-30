@@ -10,11 +10,13 @@ import { ForcesListService } from '../../Services/forces-list-service/forces-lis
     <p></p>
     <!--Pour l'instant je ne l'ai pas mis parce que ça ne fonctionne pas
     Mais ça sera la forme finale pour les détails d'une force affichée-->
-    <div>Unique force identifier : {{forceDetail.id}} </div>
-    <div>Forn name : {{forceDetail.name}} </div>
-    <div>Description : {{forceDetail.description}} </div>
-    <div>Force website URL : {{forceDetail.url}} </div>
-    <div>Force telephone number : {{forceDetail.telephone}} </div>
+    <div *ngIf="forceDetail">
+      <div>Unique force identifier : {{forceDetail.id}} </div>
+      <div>Forn name : {{forceDetail.name}} </div>
+      <div [innerHtml]="forceDetail.description"></div>
+      <div>Force website URL : {{forceDetail.url}} </div>
+      <div>Force telephone number : {{forceDetail.telephone}} </div>
+    </div>
     <!--<span>Officer Name : {{forceOfficer.name}} </span>
     <span>Officer Rank : {{forceOfficer.rank}} </span>
     <span>Officer Bio : {{forceOfficer.bio}} </span>-->

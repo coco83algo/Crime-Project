@@ -27,55 +27,18 @@ export class ForcesListService {
     return this.forceList;
   }
 
-  getForceFromServer(): Force[] {
-    this.httpClient.
-    get<Force[]>('https://data.police.uk/api/forces')
-      .subscribe(
-        (response: Force[]) => {
-          this.forceList.push(...response);
-          console.log('Reçu !');
-          console.log(this.forceList);
-        },
-        (error) => {
-          console.log('Erreur ! : ' + error);
-        }
-      );
-    return this.forceList;
+  getForceFromServer(): Observable<Force[]> {
+    return this.httpClient
+      .get<Force[]>('https://data.police.uk/api/forces');
   }
 
-  getForceDetailsFromServer(currentForceId: number) {
-    this.httpClient
-        .get<ForceDetails>('https://data.police.uk/api/forces' + '/' + currentForceId)
-        .subscribe(
-          (response: ForceDetails) => {
-            this.forceListDetails = response;
-            // this.isDetailsDisplay = !this.isDetailsDisplay;
-            // this.isOfficerDisplay = false;
-            console.log(this.forceListDetails);
-            console.log('Details reçus !');
-          },
-          (error) => {
-            console.log('Erreur ! : ' + error);
-          }
-        );
-    return this.forceListDetails;
+  getForceDetailsFromServer(currentForceId: number): Observable<ForceDetails> {
+    return this.httpClient
+        .get<ForceDetails>('https://data.police.uk/api/forces' + '/' + currentForceId);
   }
 
-  getForceOfficersFromServer(currentForceId: number) {
-    this.httpClient
-        .get<ForceOfficer[]>('https://data.police.uk/api/forces' + '/' + currentForceId + '/people')
-        .subscribe(
-          (response: ForceOfficer[]) => {
-            this.forceListOfficers = response;
-           // this.isDetailsDisplay = false;
-           // this.isOfficerDisplay = !this.isOfficerDisplay;
-            console.log('Officiers reçus !');
-            console.log(this.forceListOfficers);
-          },
-          (error) => {
-            console.log('Erreur ! : ' + error);
-          }
-        );
-    return this.forceListOfficers;
+  getForceOfficersFromServer(currentForceId: number): Observable<ForceOfficer[]> {
+    return this.httpClient
+        .get<ForceOfficer[]>('https://data.police.uk/api/forces' + '/' + currentForceId + '/people');
   }
 }
