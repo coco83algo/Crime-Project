@@ -3,7 +3,6 @@ import { Force } from '../../Interfaces/Force';
 import { ForceDetails } from '../../Interfaces/ForceDetails';
 import { ForceOfficer } from '../../Interfaces/ForceOfficer';
 import { Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
