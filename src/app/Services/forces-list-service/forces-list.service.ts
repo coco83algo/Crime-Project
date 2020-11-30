@@ -12,7 +12,7 @@ import { HttpClient } from '@angular/common/http';
 
 export class ForcesListService {
   forceList: Force[] = [];
-  forceListDetails: ForceDetails[] = [];
+  forceListDetails!: ForceDetails;
   forceListOfficers: ForceOfficer[] = [];
 
   isDetailsDisplay = false;
@@ -27,12 +27,12 @@ export class ForcesListService {
     return this.forceList;
   }
 
-  getForceFromServer() {
+  getForceFromServer(): Force[] {
     this.httpClient.
     get<Force[]>('https://data.police.uk/api/forces')
       .subscribe(
         (response: Force[]) => {
-          this.forceList = response;
+          this.forceList.push(...response);
           console.log('Reçu !');
           console.log(this.forceList);
         },
@@ -45,9 +45,9 @@ export class ForcesListService {
 
   getForceDetailsFromServer(currentForceId: number) {
     this.httpClient
-        .get<ForceDetails[]>('https://data.police.uk/api/forces' + '/' + currentForceId)
+        .get<ForceDetails>('https://data.police.uk/api/forces' + '/' + currentForceId)
         .subscribe(
-          (response: ForceDetails[]) => {
+          (response: ForceDetails) => {
             this.forceListDetails = response;
             // this.isDetailsDisplay = !this.isDetailsDisplay;
             // this.isOfficerDisplay = false;

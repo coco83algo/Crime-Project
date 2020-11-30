@@ -1,20 +1,24 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Force } from '../../Interfaces/Force';
+import { ForceDetails } from '../../Interfaces/ForceDetails';
+import { ForceOfficer } from '../../Interfaces/ForceOfficer';
 import { ForcesListService } from '../../Services/forces-list-service/forces-list.service';
 
 @Component({
   selector: 'cpa-force-details',
   template: `
-    <p>Get details</p>
-    <!--<button (click)="getForceDetails(force)">Details</button>
-    <button (click)="getForceOfficers(force)">Officers</button>
-     Pour l'instant je ne l'ai pas mis parce que ça ne fonctionne pas
-    Mais ça sera la forme finale pour les détails d'une force affichée
-    <span>Unique force identifier : {{force.id}} </span>
-    <span>Forn name : {{force.name}} </span>
-    <span>Description : {{force.description}} </span>
-    <span>Force website URL : {{force.url}} </span>
-    <span>Force telephone number : {{force.telephone}} </span>-->
+    <p></p>
+    <!--Pour l'instant je ne l'ai pas mis parce que ça ne fonctionne pas
+    Mais ça sera la forme finale pour les détails d'une force affichée-->
+    <div>Unique force identifier : {{forceDetail.id}} </div>
+    <div>Forn name : {{forceDetail.name}} </div>
+    <div>Description : {{forceDetail.description}} </div>
+    <div>Force website URL : {{forceDetail.url}} </div>
+    <div>Force telephone number : {{forceDetail.telephone}} </div>
+    <!--<span>Officer Name : {{forceOfficer.name}} </span>
+    <span>Officer Rank : {{forceOfficer.rank}} </span>
+    <span>Officer Bio : {{forceOfficer.bio}} </span>-->
+
   `,
   styles: [],
 })
@@ -22,6 +26,8 @@ import { ForcesListService } from '../../Services/forces-list-service/forces-lis
 export class ForceDetailsComponent implements OnInit {
   @Input() force!: Force;
   @Input() displayDetails!: boolean;
+  @Input() forceDetail!: ForceDetails;
+  @Input() forceOfficer!: ForceOfficer;
 
   constructor(private forceslistService: ForcesListService) {}
 

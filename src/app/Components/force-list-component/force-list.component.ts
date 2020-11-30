@@ -21,23 +21,28 @@ import { HttpClient } from '@angular/common/http';
           <cpa-force [force]="currentForce"></cpa-force>
           <button (click)="getForceDetails(currentForce)">Details</button>
           <button (click)="getForceOfficers(currentForce)">Officers</button>
+          <!--<cpa-force-details [forceDetail]="forceListDetails"></cpa-force-details>-->
        </li>
     </ul>
-    </div>
-        <ul>
-          <li *ngFor="let currentForceOfficer of forceListOfficers">
-              Name: {{ currentForceOfficer.name }}
-              Rank: {{ currentForceOfficer.rank }}
-              Bio: {{ currentForceOfficer.bio }}
+   <!-- <ul>
+      <li *ngFor="let currentPoliceOfficer of forceListOfficers">
+          Name: {{ currentPoliceOfficer.name }}
+          Rank: {{ currentPoliceOfficer.rank }}
+          Bio: {{ currentPoliceOfficer.bio }}
           </li>
-        </ul>
+    </ul>
+      <li>
+            Phone: {{ forceListDetails.telephone }}
+            Url: {{ forceListDetails.url }}
+            Description: {{ forceListDetails.description }}
+        </li>-->
   `,
   styles: []
 })
 
 export class ForceListComponent implements OnInit {
   forceList: Force[] = [];
-  forceListDetails: ForceDetails[] = [];
+  forceListDetails!: ForceDetails;
   forceListOfficers: ForceOfficer[] = [];
   forces!: Force[];
   isOfficerDisplay = false;
@@ -53,6 +58,7 @@ export class ForceListComponent implements OnInit {
 
   getForceDetails(currentForce: Force): void{
     this.forceListDetails = this.forceslistService.getForceDetailsFromServer(currentForce.id);
+    console.log('Recu dans list:' + this.forceListDetails);
   }
 
   getForceOfficers(currentForce: Force): void{
