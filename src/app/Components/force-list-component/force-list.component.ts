@@ -46,7 +46,6 @@ export class ForceListComponent implements OnInit {
   forceListDetails!: Observable<ForceDetails>;
   forceListOfficers!: Observable<ForceOfficer[]>;
   forces!: Force[];
-  isOfficerDisplay = false;
   selected!: Force;
 
   constructor(private forceslistService: ForcesListService, private httpClient: HttpClient) {}
@@ -60,7 +59,6 @@ export class ForceListComponent implements OnInit {
 
   getForceDetails(currentForce: Force): void{
     this.forceListDetails = this.forceslistService.getForceDetailsFromServer(currentForce.id);
-    console.log('Recu dans list:' + this.forceListDetails);
     this.selected = currentForce;
   }
 

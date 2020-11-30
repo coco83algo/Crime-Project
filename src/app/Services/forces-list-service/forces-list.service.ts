@@ -15,17 +15,10 @@ export class ForcesListService {
   forceListDetails!: ForceDetails;
   forceListOfficers: ForceOfficer[] = [];
 
-  isDetailsDisplay = false;
-  isOfficerDisplay = false;
-
   constructor(private httpClient: HttpClient) { }
   /*getForces(): Observable<Force[]> {
     return of(FORCELIST);
   }*/
-
-  getList() {
-    return this.forceList;
-  }
 
   getForceFromServer(): Observable<Force[]> {
     return this.httpClient

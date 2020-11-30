@@ -27,7 +27,6 @@ import { ForcesListService } from '../../Services/forces-list-service/forces-lis
 
 export class ForceDetailsComponent implements OnInit {
   @Input() force!: Force;
-  @Input() displayDetails!: boolean;
   @Input() forceDetail!: ForceDetails;
   @Input() forceOfficer!: ForceOfficer;
 
