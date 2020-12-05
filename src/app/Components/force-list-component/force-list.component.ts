@@ -23,7 +23,7 @@ import { Observable } from 'rxjs';
           <button (click)="getForceDetails(currentForce)">Details</button>
           <button (click)="getForceOfficers(currentForce)">Officers</button>
           <cpa-force-details *ngIf="currentForce === selected" [forceDetail]="forceListDetails | async"></cpa-force-details>
-          <cpa-force-officers *ngIf="currentForce === selected" [forceOfficer]="forceListOfficers | async"></cpa-force-officers>
+          <cpa-force-officers *ngIf="currentForce === selectedOfficer" [forceOfficer]="forceListOfficers | async"></cpa-force-officers>
        </li>
     </ul>
     <!--<div *ngFor="let currentOfficer of forceListOfficers | async">
@@ -39,7 +39,7 @@ export class ForceListComponent implements OnInit {
   forceListOfficers!: Observable<ForceOfficer[]>;
   forces!: Force[];
   selected!: Force;
-  selectedOfficer!: ForceOfficer;
+  selectedOfficer!: Force;
 
   constructor(private forceslistService: ForcesListService, private httpClient: HttpClient) {}
 
@@ -53,12 +53,13 @@ export class ForceListComponent implements OnInit {
   getForceDetails(currentForce: Force): void{
     this.forceListDetails = this.forceslistService.getForceDetailsFromServer(currentForce.id);
     this.selected = currentForce;
+    console.log(this.selected);
   }
 
   getForceOfficers(currentForce: Force): void{
     this.forceListOfficers = this.forceslistService.getForceOfficersFromServer(currentForce.id);
-    this.selected = currentForce;
-    console.log(this.forceListOfficers);
+    this.selectedOfficer = currentForce;
+    console.log(this.selectedOfficer);
   }
 
 }

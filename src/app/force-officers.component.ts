@@ -5,9 +5,6 @@ import { ForceOfficer } from './Interfaces/ForceOfficer';
   selector: 'cpa-force-officers',
   template: `
     <div *ngIf="forceOfficer;else elseTemplate">
-    <p>
-      Force Officers List :
-    </p>
       <div *ngFor="let currentOfficer of forceOfficer">
         <div>Officer Name : {{currentOfficer.name}} </div>
         <div>Officer Rank : {{currentOfficer.rank}} </div>
