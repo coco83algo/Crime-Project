@@ -6,12 +6,12 @@ import { ForceOfficer } from './Interfaces/ForceOfficer';
   template: `
     <div *ngIf="forceOfficer;else elseTemplate">
       <div *ngFor="let currentOfficer of forceOfficer">
-        <div>Officer Name : {{currentOfficer.name}} </div>
-        <div>Officer Rank : {{currentOfficer.rank}} </div>
+        <div style="font-weight:bold">Officer Name : {{currentOfficer.name}} </div>
+        <div style="font-weight:bold">Officer Rank : {{currentOfficer.rank}} </div>
         <div [innerHtml]="currentOfficer.bio"></div>
       </div>
     </div>
-
+    <!-- soucis : ce template ne s'affiche pas quand pas de liste dispo-->
     <ng-template #elseTemplate>
       <div class="alternative">
         No information available
