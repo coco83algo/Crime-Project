@@ -10,6 +10,8 @@ import { ForcesListService } from './Services/forces-list-service/forces-list.se
 import { HttpClientModule } from '@angular/common/http';
 import { ForceOfficersComponent } from './force-officers.component';
 import { CrimeComponent } from './crime.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { CrimeDetailsComponent } from './crime-details.component';
 
 @NgModule({
   declarations: [
@@ -18,12 +20,15 @@ import { CrimeComponent } from './crime.component';
     ForceComponent,
     ForceDetailsComponent,
     ForceOfficersComponent,
-    CrimeComponent
+    CrimeComponent,
+    CrimeDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     ForcesListService

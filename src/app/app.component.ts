@@ -11,8 +11,10 @@ import { Component } from '@angular/core';
     <h1>Angular Router App</h1>-->
     <nav>
       <ul>
+        <li><a routerLink="/forces" routerLinkActive="active">Accueil</a></li>
         <li><a routerLink="/forces" routerLinkActive="active">Forces</a></li>
         <li><a routerLink="/crimes" routerLinkActive="active">Crimes</a></li>
+        <li><a routerLink="/crimes" routerLinkActive="active">A propos</a></li>
       </ul>
     </nav>
     <router-outlet></router-outlet>
