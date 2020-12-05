@@ -3,7 +3,6 @@ import { Force } from '../../Interfaces/Force';
 import { ForceDetails } from '../../Interfaces/ForceDetails';
 import { ForceOfficer } from '../../Interfaces/ForceOfficer';
 import { ForcesListService } from '../../Services/forces-list-service/forces-list.service';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -33,7 +32,7 @@ export class ForceListComponent implements OnInit {
   selected!: Force;
   selectedOfficer!: Force;
 
-  constructor(private forceslistService: ForcesListService, private httpClient: HttpClient) {}
+  constructor(private forceslistService: ForcesListService) {}
 
   ngOnInit(): void {
   }
@@ -45,13 +44,13 @@ export class ForceListComponent implements OnInit {
   getForceDetails(currentForce: Force): void{
     this.forceListDetails = this.forceslistService.getForceDetailsFromServer(currentForce.id);
     this.selected = currentForce;
-    console.log(this.selected);
+    // console.log(this.selected);
   }
 
   getForceOfficers(currentForce: Force): void{
     this.forceListOfficers = this.forceslistService.getForceOfficersFromServer(currentForce.id);
     this.selectedOfficer = currentForce;
-    console.log(this.selectedOfficer);
+    // console.log(this.selectedOfficer);
   }
 
 }

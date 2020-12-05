@@ -10,26 +10,20 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class ForcesListService {
-  forceList: Force[] = [];
-  forceListDetails!: ForceDetails;
-  forceListOfficers: ForceOfficer[] = [];
 
   constructor(private httpClient: HttpClient) { }
-  /*getForces(): Observable<Force[]> {
-    return of(FORCELIST);
-  }*/
 
   getForceFromServer(): Observable<Force[]> {
     return this.httpClient
       .get<Force[]>('https://data.police.uk/api/forces');
   }
 
-  getForceDetailsFromServer(currentForceId: number): Observable<ForceDetails> {
+  getForceDetailsFromServer(currentForceId: string): Observable<ForceDetails> {
     return this.httpClient
         .get<ForceDetails>('https://data.police.uk/api/forces' + '/' + currentForceId);
   }
 
-  getForceOfficersFromServer(currentForceId: number): Observable<ForceOfficer[]> {
+  getForceOfficersFromServer(currentForceId: string): Observable<ForceOfficer[]> {
     return this.httpClient
         .get<ForceOfficer[]>('https://data.police.uk/api/forces' + '/' + currentForceId + '/people');
   }

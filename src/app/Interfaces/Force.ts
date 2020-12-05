@@ -1,7 +1,7 @@
 import { Observable, of } from 'rxjs';
 
 export interface Force {
-  id: number;
+  id: string;
   name: string;
   description: string;
   url: string;
