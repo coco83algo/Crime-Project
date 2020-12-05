@@ -10,11 +10,6 @@ import { Observable } from 'rxjs';
   selector: 'cpa-force-list',
   template: `
     <p>This is the list of forces in this area :</p>
-    <!--<ul>
-      <li *ngFor="let currentForce of forces">
-        <cpa-force [force]="currentForce"> </cpa-force>
-      </li>
-    </ul>-->
     <div>
     <button (click)="getForces()">Show all Forces</button>
     <ul>
@@ -26,9 +21,6 @@ import { Observable } from 'rxjs';
           <cpa-force-officers *ngIf="currentForce === selectedOfficer" [forceOfficer]="forceListOfficers | async"></cpa-force-officers>
        </li>
     </ul>
-    <!--<div *ngFor="let currentOfficer of forceListOfficers | async">
-      <cpa-force-officers *ngIf="currentOfficer === selectedOfficer" [forceOfficer]="currentOfficer"></cpa-force-officers>
-    </div> -->
   `,
   styles: []
 })
