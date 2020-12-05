@@ -1,63 +1,54 @@
-/* You can add global styles to this file, and also import other style files
+/* You can add global styles to this file, and also import other style files*/
 * {
   font-family: 'Arial';
-  box-sizing: border-box; /* Les tailles de conteneurs incluent bordures et remplissages
-  margin: 0; /* Mise à 0 des marges externes
-  padding: 0; /* Mise à 0 des marges internes
-  text-decoration: none; /* Suppression de la mise en forme habituelle des liens (soulignement)
+  box-sizing: border-box; /* Les tailles de conteneurs incluent bordures et remplissages*/
+  margin: 0; /* Mise à 0 des marges externes*/
+  padding: 0; /* Mise à 0 des marges internes*/
+  text-decoration: none; /* Suppression de la mise en forme habituelle des liens (soulignement)*/
 }
-
-/*div {
-  display: block;
+button{
+  font-size: 17px;
 }
-
-body {
-  margin:0;
-  padding:0;
-  width:100%;
-  height:100%;
-}
-
-/*barre jaune au dessus de navbar
+/*barre jaune au dessus de navbar*/
 #zone-header {
   position: fixed;
-  z-index: 10; /*mis en avant
+  z-index: 10; /*mis en avant*/
   background: black;
   border-top: 0.3rem solid #ffb000;
   height: 5rem;
 }
 
 .navbar {
-  /*overflow: hidden;
+  overflow: hidden;
   background-color: black;
-  position: fixed;  /*nav bar fixée
+  position: fixed;  /*nav bar fixée*/
   top: 0;
   width: 100%;
 }
 
 nav ul {
-  display: flex; /* Ce conteneur est "flexible"
-  flex-direction: row; /* Les éléments sont mis côte à côte
-  justify-content: space-between; /* Les éléments sont répartis équitablement
-  background-color: black; /* Couleur du fond
+  display: flex; /* Ce conteneur est "flexible"*/
+  flex-direction: row; /* Les éléments sont mis côte à côte*/
+  justify-content: space-between; /* Les éléments sont répartis équitablement*/
+  background-color: black; /* Couleur du fond*/
 }
 nav ul li {
-  display: flex; /* Ce conteneur est "flexible"
-  justify-content: center; /* Les éléments portés sont centrés à l'horizontal
-  list-style-type: none; /* Cette liste n'a pas de puce
-  font-size: x-large; /* Le texte est grossi en XL
-  flex-grow: 1; /* L'espace occupé est élargie
+  display: flex; /* Ce conteneur est "flexible"*/
+  justify-content: center; /* Les éléments portés sont centrés à l'horizontal*/
+  list-style-type: none; /* Cette liste n'a pas de puce*/
+  font-size: x-large; /* Le texte est grossi en XL*/
+  flex-grow: 1; /* L'espace occupé est élargie*/
 }
 nav ul li a {
-  padding: 16px; /* Marge intérieure
-  color: white; /* Couleur du texte
+  padding: 16px; /* Marge intérieure*/
+  color: white; /* Couleur du texte*/
   list-style-type: none;
 }
 nav ul li:hover {
-  background-color:#ffb000; /* Couleur du fond au passage de la souris
+  background-color:#ffb000; /* Couleur du fond au passage de la souris*/
 }
 nav ul li a:hover {
-  color: black; /* Couleur ecriture au passage de la souris
+  color: black; /* Couleur ecriture au passage de la souris*/
 }
 
 nav input {
@@ -67,52 +58,52 @@ nav input {
   z-index: 2;
 }
 
-/* DROPDOWN MENU
-/* Style The Dropdown Button
+/* DROPDOWN MENU*/
+/* Style The Dropdown Button*/
 .dropbtn {
-  background-color:black; /*couleur fond du bouton
-  color: white;   /*couleur text
+  background-color:black; /*couleur fond du bouton*/
+  color: white;   /*couleur text*/
   padding: 16px;
   font-size:x-large ;
   font-family: 'Arial';
   border: none;
-  /*cursor: pointer;
+  cursor: pointer;
   text-align: center;
   justify-content: center;
 }
-/* The container <div> - needed to position the dropdown content
+/* The container <div> - needed to position the dropdown content*/
 .dropdown {
   position: relative;
   display: inline-block;
 }
-/* Dropdown Content (Hidden by Default)
+/* Dropdown Content (Hidden by Default)*/
 .dropdown-content {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1; /*mettre en avant le contenu du dropdown
+  z-index: 1; /*mettre en avant le contenu du dropdown*/
   text-align: left;
 }
-/* Links inside the dropdown
+/* Links inside the dropdown*/
 .dropdown-content a {
   color: black;
   padding: 10px 10px;
   text-decoration: none;
   display: block;
 }
-/* Change color of dropdown links on hover
+/* Change color of dropdown links on hover*/
 .dropdown-content a:hover {
   background-color: #ffb000
 }
-/* Show the dropdown menu on hover
+/* Show the dropdown menu on hover*/
 .dropdown:hover .dropdown-content {
   display: block;
 }
-/* Change the background color of the dropdown button when the dropdown content is shown
+/* Change the background color of the dropdown button when the dropdown content is shown*/
 .dropdown:hover .dropbtn {
   background-color: #ffb000;
   color : black;
 }
-*/
+
