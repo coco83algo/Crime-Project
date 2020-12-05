@@ -5,7 +5,7 @@ import { Force } from '../../Interfaces/Force';
   selector: 'cpa-force',
   template: `
     <span>
-      {{ force.id }} - {{ force.name | titlecase }}
+      {{ force.name | titlecase }}
       <cpa-force-details></cpa-force-details>
     </span>
   `,

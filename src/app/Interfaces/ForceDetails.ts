@@ -1,6 +1,6 @@
 import { EngagementMethods } from './EngagementMethods';
 
-export interface PoliceDetails {
+export interface ForceDetails {
   id: string;
   name: string;
   telephone: string;

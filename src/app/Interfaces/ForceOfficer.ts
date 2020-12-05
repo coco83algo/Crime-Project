@@ -1,6 +1,6 @@
 import { OfficerContactDetails } from './OfficerContactDetails';
 
-export interface PoliceOfficer {
+export interface ForceOfficer {
   name: string;
   rank: string;
   bio: string;

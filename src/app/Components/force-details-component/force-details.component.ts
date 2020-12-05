@@ -1,24 +1,25 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Force } from '../../Interfaces/Force';
+import { ForceDetails } from '../../Interfaces/ForceDetails';
+import { ForcesListService } from '../../Services/forces-list-service/forces-list.service';
 
 @Component({
   selector: 'cpa-force-details',
   template: `
-    <p>get details</p>
-    <!-- Pour l'instant je ne l'ai pas mis parce que ça ne fonctionne pas
-    Mais ça sera la forme finale pour les détails d'une force affichée
-    <div>Unique force identifier : {{force.id}} </div>
-    <div>Forn name : {{force.name}} </div>
-    <div>Description : {{force.description}} </div>
-    <div>Force website URL : {{force.url}} </div>
-    <div>Force telephone number : {{force.telephone}} </div> -->
+    <div *ngIf="forceDetail">
+      <div>Unique force identifier : {{forceDetail.id}} </div>
+      <div>Forn name : {{forceDetail.name}} </div>
+      <div [innerHtml]="forceDetail.description"></div>
+      <div>Force website URL : {{forceDetail.url}} </div>
+      <div>Force telephone number : {{forceDetail.telephone}} </div>
+    </div>
   `,
   styles: [],
 })
 
 export class ForceDetailsComponent implements OnInit {
-  @Input() force!: Force;
-  constructor() {}
+  @Input() forceDetail!: ForceDetails;
+
+  constructor(private forceslistService: ForcesListService) {} // enlever constructeur ?
 
   ngOnInit(): void {}
 }

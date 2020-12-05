@@ -6,19 +6,26 @@ import { AppComponent } from './app.component';
 import { ForceListComponent } from './Components/force-list-component/force-list.component';
 import { ForceComponent } from './Components/force-component/force.component';
 import { ForceDetailsComponent } from './Components/force-details-component/force-details.component';
+import { ForcesListService } from './Services/forces-list-service/forces-list.service';
+import { HttpClientModule } from '@angular/common/http';
+import { ForceOfficersComponent } from './force-officers.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ForceListComponent,
     ForceComponent,
-    ForceDetailsComponent
+    ForceDetailsComponent,
+    ForceOfficersComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    ForcesListService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
