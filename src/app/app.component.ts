@@ -3,11 +3,19 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'cpa-root',
   template: `
-    <!--The content below is only a placeholder and can be replaced.-->
-    <div class="content">
+   <!-- <div class="content">
       <h1>Welcome to {{ title }}!</h1>
       <cpa-force-list></cpa-force-list>
     </div>
+
+    <h1>Angular Router App</h1>-->
+    <nav>
+      <ul>
+        <li><a routerLink="/forces" routerLinkActive="active">Forces</a></li>
+        <li><a routerLink="/crimes" routerLinkActive="active">Crimes</a></li>
+      </ul>
+    </nav>
+    <router-outlet></router-outlet>
   `,
   styles: [],
 })

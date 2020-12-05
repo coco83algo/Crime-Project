@@ -8,7 +8,7 @@ import { ForcesListService } from '../../Services/forces-list-service/forces-lis
     <div *ngIf="forceDetail">
       <div>Unique force identifier : {{forceDetail.id}} </div>
       <div>Forn name : {{forceDetail.name}} </div>
-      <div [innerHtml]="forceDetail.description"></div>
+      <!--<div</div>-->
       <div>Force website URL : {{forceDetail.url}} </div>
       <div>Force telephone number : {{forceDetail.telephone}} </div>
     </div>
