@@ -82,7 +82,7 @@ export class CrimeComponent implements OnInit {
 
   // Choose city using select dropdown
   changeForce(e: { value: any; target: { value: any; }; }) {
-    this.forceName.setValue(e.target.value, {
+    this.forceName && this.forceName.setValue(e.target.value, {
       onlySelf: true
     });
   }
@@ -99,9 +99,7 @@ export class CrimeComponent implements OnInit {
 
   getCrimes() {
     this.isSubmitted = true;
-    if (!this.registrationForm.valid) {
-      return false;
-    } else {
+    if (this.registrationForm.valid) {
       this.crimeList = this.crimesService.getCrimesFromServer(this.registrationForm.value.forceName);
       console.log(this.registrationForm.value.forceName);
     }

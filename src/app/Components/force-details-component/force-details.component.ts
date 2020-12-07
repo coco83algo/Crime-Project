@@ -17,7 +17,7 @@ import { ForcesListService } from '../../Services/forces-list-service/forces-lis
 })
 
 export class ForceDetailsComponent implements OnInit {
-  @Input() forceDetail!: ForceDetails;
+  @Input() forceDetail?: ForceDetails;
 
   constructor(private forceslistService: ForcesListService) {} // enlever constructeur ?
 
