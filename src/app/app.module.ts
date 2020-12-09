@@ -12,6 +12,7 @@ import { ForceOfficersComponent } from './Components/force-officers.component';
 import { CrimeComponent } from './Components/crime.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CrimeDetailsComponent } from './Components/crime-details.component';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CrimeDetailsComponent } from './Components/crime-details.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    LeafletModule
   ],
   providers: [
     ForcesListService

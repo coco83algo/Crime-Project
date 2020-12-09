@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { isEmpty } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { CrimesService } from '../crimes.service';
@@ -47,11 +48,18 @@ import { Force } from '../Interfaces/Force';
   </div>
 </div>
 
-<ul>
+<!--<ul *ngIf="crimeList && (crimeList | async).length; else noInfo">-->
+<ul *ngIf="crimeList">
     <li *ngFor="let currentCrime of crimeList | async">
     <cpa-crime-details [crimeDetail]="currentCrime"></cpa-crime-details>
     </li>
 </ul>
+
+<ng-template #noInfo>
+      <div class="alternative">
+        No information available
+      </div>
+    </ng-template>
 `
   ,
   styleUrls: ['../crime.css']
@@ -85,7 +93,7 @@ export class CrimeComponent implements OnInit {
     this.isSubmitted = true;
     if (this.registrationForm.valid) {
       this.crimeList = this.crimesService.getCrimesFromServer(this.registrationForm.value.forceName);
-      console.log(this.registrationForm.value.forceName);
+      console.log(this.crimeList);
     }
   }
 

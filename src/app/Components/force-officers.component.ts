@@ -4,7 +4,7 @@ import { ForceOfficer } from '../Interfaces/ForceOfficer';
 @Component({
   selector: 'cpa-force-officers',
   template: `
-    <ng-container *ngIf="forceOfficer && forceOfficer.length; else elseTemplate">
+    <ng-container *ngIf="forceOfficer && forceOfficer.length; else noInfo">
       <div *ngFor="let currentOfficer of forceOfficer">
         <div style="font-weight:bold">Officer Name : {{currentOfficer.name}} </div>
         <div style="font-weight:bold">Officer Rank : {{currentOfficer.rank}} </div>
@@ -12,7 +12,7 @@ import { ForceOfficer } from '../Interfaces/ForceOfficer';
       </div>
     </ng-container>
 
-    <ng-template #elseTemplate>
+    <ng-template #noInfo>
       <div class="alternative">
         No information available
       </div>
