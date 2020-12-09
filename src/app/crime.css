@@ -98,7 +98,7 @@ label {
   display: none;
 }
 
-.avatar-upload .avatar-edit .custom-label {
+/*.avatar-upload .avatar-edit .custom-label {
   display: inline-block;
   width: 34px;
   height: 34px;
@@ -110,7 +110,7 @@ label {
   cursor: pointer;
   font-weight: normal;
   transition: all 0.2s ease-in-out;
-}
+}*/
 
 .avatar-upload .avatar-edit .upload-image {
   background: #3efc78;
@@ -209,34 +209,20 @@ label {
 }
 
 .btn-danger,
-body .btn-danger:hover {
+body .btn-danger {
   background:white;
   border: 0.3rem solid black;
   color: black;
   font-weight: 600;
 }
 
-/*.btn-danger,
-body .btn-danger {
-  background: white;
-  text-transform: uppercase;
+.btn-danger:active {
+  background-color: #ffb000;
+  /*border-color: #ffb000;*/
   border: 0.3rem solid black;
-  padding: 1.4rem 2rem;
-  margin-top: 10%;
-  line-height: 1.4;
   color: black;
-  text-decoration: none;
-  letter-spacing: 0.1em;
-  transition: background .2s linear;
   font-weight: 600;
 }
-.btn-danger,
-body .btn-danger:hover {
-  background-color: #ffb000;
-  border-color: #ffb000;
-  color: black;
-  font-weight: 600;
-}*/
 
 .subjectList {
   margin: 0;

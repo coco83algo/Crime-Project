@@ -1,9 +1,10 @@
-import { LowerCasePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 import { CrimesService } from './crimes.service';
 import { Crime } from './Interfaces/Crime';
+import { Force } from './Interfaces/Force';
 
 @Component({
   selector: 'cpa-crime-component',
@@ -26,7 +27,7 @@ import { Crime } from './Interfaces/Crime';
           <div class="mb-3">
             <select class="custom-select" (change)="changeForce($event)" formControlName="forceName">
               <option value="">Choose a force name</option>
-              <option *ngFor="let force of Force" [ngValue]="force">{{force}}</option>
+              <option *ngFor="let force of Force" [ngValue]="force.id">{{ force.id | titlecase }}</option>
             </select>
 
             <!-- error block -->
@@ -57,23 +58,16 @@ import { Crime } from './Interfaces/Crime';
 })
 export class CrimeComponent implements OnInit {
 
-  constructor(public fb: FormBuilder, private crimesService: CrimesService) {}
+  constructor(public fb: FormBuilder, private crimesService: CrimesService, private httpClient: HttpClient) {}
 
   crimeList!: Observable<Crime[]>;
   isSubmitted = false;
-  Force: any = ['Avon-and-somerset',
-  'Bedfordshire ',
-  'Cambridgeshire ',
-  'Cheshire',
-  'City-of-london',
-  'Cleveland',
-  'Cumbria',
-  'Derbyshire'
-  ];
+  Force: any = [];
 
   get forceName() {
     return this.registrationForm.get('forceName');
   }
+
   /* Form */
   registrationForm = this.fb.group({
     forceName: ['', [Validators.required]]
@@ -87,16 +81,6 @@ export class CrimeComponent implements OnInit {
     });
   }
 
-  // tslint:disable-next-line: typedef
-  /*onSubmit() {
-    this.isSubmitted = true;
-    if (!this.registrationForm.valid) {
-      return false;
-    } else {
-      alert(JSON.stringify(this.registrationForm.value));
-    }
-  }*/
-
   getCrimes() {
     this.isSubmitted = true;
     if (this.registrationForm.valid) {
@@ -105,5 +89,13 @@ export class CrimeComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.httpClient
+      .get<Force[]>('https://data.police.uk/api/forces')
+      .subscribe(response => {
+          this.Force = response;
+          console.log(this.Force);
+      })
+  }
+
 }
