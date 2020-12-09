@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { CrimesService } from './crimes.service';
-import { Crime } from './Interfaces/Crime';
-import { Force } from './Interfaces/Force';
+import { CrimesService } from '../crimes.service';
+import { Crime } from '../Interfaces/Crime';
+import { Force } from '../Interfaces/Force';
 
 @Component({
   selector: 'cpa-crime-component',
@@ -54,7 +54,7 @@ import { Force } from './Interfaces/Force';
 </ul>
 `
   ,
-  styleUrls: ['./crime.css']
+  styleUrls: ['../crime.css']
 })
 
 export class CrimeComponent implements OnInit {
