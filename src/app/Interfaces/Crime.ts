@@ -1,3 +1,5 @@
+import { CrimeStatus } from './CrimeStatus';
+
 export interface Crime {
   category: string;
   persistent_id: string;
@@ -7,5 +9,5 @@ export interface Crime {
   context: string;
   month: Date;
   location_type: string;
-  outcome_status: [category: string, date: Date];
+  outcome_status: CrimeStatus;
 }

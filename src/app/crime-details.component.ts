@@ -8,9 +8,8 @@ import { Crime } from './Interfaces/Crime';
   <div *ngIf="crimeDetail">
     <div>Crime ID : {{crimeDetail.id}} </div>
     <div>Crime category : {{crimeDetail.category}} </div>
-    <div>Context : {{crimeDetail.context}} </div>
-    <div>Location : {{crimeDetail.location}} </div>
-    <!--<div>Status : {{crimeDetail.outcome_status}} </div>-->
+    <div>Status : {{crimeDetail.outcome_status.category}} </div>
+    <div>Date : {{crimeDetail.outcome_status.date}} </div>
   </div>
 `,
   styles: [

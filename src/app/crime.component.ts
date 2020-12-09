@@ -56,6 +56,7 @@ import { Force } from './Interfaces/Force';
   ,
   styleUrls: ['./crime.css']
 })
+
 export class CrimeComponent implements OnInit {
 
   constructor(public fb: FormBuilder, private crimesService: CrimesService, private httpClient: HttpClient) {}
@@ -64,17 +65,16 @@ export class CrimeComponent implements OnInit {
   isSubmitted = false;
   Force: any = [];
 
-  get forceName() {
-    return this.registrationForm.get('forceName');
-  }
-
-  /* Form */
+  // Form
   registrationForm = this.fb.group({
     forceName: ['', [Validators.required]]
   });
 
+  get forceName() {
+    return this.registrationForm.get('forceName');
+  }
 
-  // Choose city using select dropdown
+  // Choose a force using select dropdown
   changeForce(e: { value: any; target: { value: any; }; }) {
     this.forceName && this.forceName.setValue(e.target.value, {
       onlySelf: true
@@ -92,10 +92,7 @@ export class CrimeComponent implements OnInit {
   ngOnInit(): void {
     this.httpClient
       .get<Force[]>('https://data.police.uk/api/forces')
-      .subscribe(response => {
-          this.Force = response;
-          console.log(this.Force);
-      })
+      .subscribe(response => {this.Force = response;})
   }
 
 }
