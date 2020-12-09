@@ -4,14 +4,14 @@ import { ForceOfficer } from '../Interfaces/ForceOfficer';
 @Component({
   selector: 'cpa-force-officers',
   template: `
-    <div *ngIf="forceOfficer;else elseTemplate">
+    <ng-container *ngIf="forceOfficer && forceOfficer.length; else elseTemplate">
       <div *ngFor="let currentOfficer of forceOfficer">
         <div style="font-weight:bold">Officer Name : {{currentOfficer.name}} </div>
         <div style="font-weight:bold">Officer Rank : {{currentOfficer.rank}} </div>
-        <!--<div [innerHtml]="currentOfficer.bio"></div>-->
+        <div [innerHtml]="currentOfficer.bio"></div>
       </div>
-    </div>
-    <!-- soucis : ce template ne s'affiche pas quand pas de liste dispo-->
+    </ng-container>
+
     <ng-template #elseTemplate>
       <div class="alternative">
         No information available
