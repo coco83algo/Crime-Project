@@ -8,12 +8,12 @@ import { ForceComponent } from './Components/force-component/force.component';
 import { ForceDetailsComponent } from './Components/force-details-component/force-details.component';
 import { ForcesListService } from './Services/forces-list-service/forces-list.service';
 import { HttpClientModule } from '@angular/common/http';
-import { ForceOfficersComponent } from './Components/force-officers.component';
-import { CrimeComponent } from './Components/crime.component';
+import { ForceOfficersComponent } from './Components/force-officers-component/force-officers.component';
+import { CrimeComponent } from './Components/crime-component/crime.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { CrimeDetailsComponent } from './Components/crime-details.component';
+import { CrimeDetailsComponent } from './Components/crime-details-component/crime-details.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
-import { MapComponent } from './map.component';
+import { MapComponent } from './Components/map-component/map.component';
 
 @NgModule({
   declarations: [

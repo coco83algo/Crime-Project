@@ -3,9 +3,9 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { isEmpty } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { CrimesService } from '../crimes.service';
-import { Crime } from '../Interfaces/Crime';
-import { Force } from '../Interfaces/Force';
+import { CrimesService } from '../../Services/crimes-service/crimes.service';
+import { Crime } from '../../Interfaces/Crime';
+import { Force } from '../../Interfaces/Force';
 
 @Component({
   selector: 'cpa-crime-component',
@@ -62,7 +62,7 @@ import { Force } from '../Interfaces/Force';
     </ng-template>
 `
   ,
-  styleUrls: ['../crime.css']
+  styleUrls: ['crime.css']
 })
 
 export class CrimeComponent implements OnInit {
@@ -100,7 +100,7 @@ export class CrimeComponent implements OnInit {
   ngOnInit(): void {
     this.httpClient
       .get<Force[]>('https://data.police.uk/api/forces')
-      .subscribe(response => {this.Force = response;})
+      .subscribe(response => {this.Force = response; });
   }
 
 }

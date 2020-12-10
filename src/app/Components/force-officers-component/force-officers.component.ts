@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ForceOfficer } from '../Interfaces/ForceOfficer';
+import { ForceOfficer } from '../../Interfaces/ForceOfficer';
 
 @Component({
   selector: 'cpa-force-officers',

@@ -17,9 +17,6 @@ export class MapComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
-
   options = {
     layers: [
       tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -29,5 +26,8 @@ export class MapComponent implements OnInit {
     zoom: 7,
     center: latLng([ 46.879966, -121.726909 ])
   };
+
+  ngOnInit(): void {
+  }
 
 }

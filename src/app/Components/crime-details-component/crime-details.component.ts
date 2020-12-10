@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CrimesService } from '../crimes.service';
-import { Crime } from '../Interfaces/Crime';
+import { CrimesService } from '../../Services/crimes-service/crimes.service';
+import { Crime } from '../../Interfaces/Crime';
 
 @Component({
   selector: 'cpa-crime-details',
