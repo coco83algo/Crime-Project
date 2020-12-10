@@ -113,3 +113,21 @@ nav input {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0px;
+  height: 35px;
+  width: 100%;
+  background-color: black;
+  color: lightgrey;
+  text-align:center;
+}
+
+footer p {
+  margin-top: 10px;
+  font-size: large;
+}

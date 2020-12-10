@@ -24,7 +24,7 @@ export class MapComponent implements OnInit {
       })
     ],
     zoom: 7,
-    center: latLng([ 46.879966, -121.726909 ])
+    center: latLng([ 51.5084, -0.1255 ])
   };
 
   ngOnInit(): void {

@@ -1,3 +1,20 @@
+h1{
+  text-align: center;
+}
+
 mat-grid-tile {
   background: lightblue;
+}
+
+.AU {
+  display: flex;
+  text-align: center;
+}
+.AU h2{
+  color: black;
+}
+
+.therese{
+  display: flex;
+  text-align: center;
 }
