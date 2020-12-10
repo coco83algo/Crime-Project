@@ -6,6 +6,9 @@
   padding: 0; /* Mise à 0 des marges internes*/
   text-decoration: none; /* Suppression de la mise en forme habituelle des liens (soulignement)*/
 }
+
+html, body {height: 100%; margin: 0; padding: 0;}
+
 button{
   font-size: 17px;
 }

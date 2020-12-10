@@ -3,11 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { ForceListComponent } from './Components/force-list-component/force-list.component';
 import { CrimeComponent } from './Components/crime.component';
+import { MapComponent } from './map.component';
 
 const routes: Routes = [
   {path: '', component: ForceListComponent},
   {path: 'forces', component: ForceListComponent},
-  {path: 'crimes', component: CrimeComponent}
+  {path: 'crimes', component: CrimeComponent},
+  {path: 'map', component: MapComponent}
 ];
 
 @NgModule({
