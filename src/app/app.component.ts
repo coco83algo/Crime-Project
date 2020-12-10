@@ -3,12 +3,6 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'cpa-root',
   template: `
-   <!-- <div class="content">
-      <h1>Welcome to {{ title }}!</h1>
-      <cpa-force-list></cpa-force-list>
-    </div>
-
-    <h1>Angular Router App</h1>-->
     <nav>
       <ul>
         <li><a routerLink="/accueil" routerLinkActive="active">Accueil</a></li>
@@ -22,5 +16,4 @@ import { Component } from '@angular/core';
   styles: [],
 })
 export class AppComponent {
-  title = 'Crime-Project';
 }

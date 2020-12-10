@@ -7,6 +7,7 @@ import { MapComponent } from './Components/map-component/map.component';
 import {AccueilComponent} from './Components/accueil/accueil.component';
 
 const routes: Routes = [
+  {path: '', component: AccueilComponent},
   {path: 'accueil', component: AccueilComponent},
   {path: 'forces', component: ForceListComponent},
   {path: 'crimes', component: CrimeComponent},

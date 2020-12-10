@@ -2,11 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'cpa-accueil',
-  template: `
-    <p>
-      accueil works!
-    </p>
-  `,
+  // template: `
+  // `,
+  templateUrl: 'accueil.html',
+  styleUrls: ['accueil.css'],
   styles: [
   ]
 })

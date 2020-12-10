@@ -15,6 +15,8 @@ import { CrimeDetailsComponent } from './Components/crime-details-component/crim
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { MapComponent } from './Components/map-component/map.component';
 import { AccueilComponent } from './Components/accueil/accueil.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { AccueilComponent } from './Components/accueil/accueil.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    LeafletModule
+    LeafletModule,
+    BrowserAnimationsModule,
+    MatGridListModule
   ],
   providers: [
     ForcesListService
