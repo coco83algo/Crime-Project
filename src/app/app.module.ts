@@ -14,6 +14,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CrimeDetailsComponent } from './Components/crime-details-component/crime-details.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { MapComponent } from './Components/map-component/map.component';
+import { AccueilComponent } from './Components/accueil/accueil.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MapComponent } from './Components/map-component/map.component';
     ForceOfficersComponent,
     CrimeComponent,
     CrimeDetailsComponent,
-    MapComponent
+    MapComponent,
+    AccueilComponent
   ],
   imports: [
     BrowserModule,

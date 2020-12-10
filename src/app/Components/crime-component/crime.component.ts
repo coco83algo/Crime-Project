@@ -78,17 +78,21 @@ export class CrimeComponent implements OnInit {
     forceName: ['', [Validators.required]]
   });
 
+  // tslint:disable-next-line: typedef
   get forceName() {
     return this.registrationForm.get('forceName');
   }
 
   // Choose a force using select dropdown
+  // tslint:disable-next-line: typedef
   changeForce(e: { value: any; target: { value: any; }; }) {
+    // tslint:disable-next-line: no-unused-expression
     this.forceName && this.forceName.setValue(e.target.value, {
       onlySelf: true
     });
   }
 
+  // tslint:disable-next-line: typedef
   getCrimes() {
     this.isSubmitted = true;
     if (this.registrationForm.valid) {
