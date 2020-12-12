@@ -21,7 +21,7 @@ import { Observable } from 'rxjs';
        </li>
     </ul>
   `,
-  styles: []
+  styles: [``]
 })
 
 export class ForceListComponent implements OnInit {

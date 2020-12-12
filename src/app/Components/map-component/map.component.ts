@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { latLng, tileLayer } from 'leaflet';
+import { circle, latLng, polygon, tileLayer } from 'leaflet';
 
 @Component({
   selector: 'cpa-map',
   template: `
     <div class="map"
-     leaflet
-     [leafletOptions]="options">
+      leaflet
+      [leafletOptions]="options">
     </div>
   `,
-  styles: [`.map {height: 100%; padding: 0;}
+  styles: [`.map {height: 90%; padding: 0;}
   html, body {height: 100%; margin: 0; padding: 0;}
 `]
 })
