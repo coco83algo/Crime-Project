@@ -8,20 +8,23 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'cpa-force-list',
   template: `
-    <p>This is the list of forces in this area :</p>
+    <h1 class="display-5">This is the list of forces in this area :</h1>
     <div>
-    <button (click)="getForces()">Show all Forces</button>
     <ul>
        <li *ngFor="let currentForce of forceList | async">
           <cpa-force [force]="currentForce"></cpa-force>
-          <button (click)="getForceDetails(currentForce)">Details</button>
-          <button (click)="getForceOfficers(currentForce)">Officers</button>
-          <cpa-force-details *ngIf="currentForce === selected" [forceDetail]="forceListDetails | async"></cpa-force-details>
+          <a [routerLink]="['/forces', currentForce.id]">
+            <button>Details</button>
+          </a>
+          <a [routerLink]="['/forces', currentForce.id, 'officers']">
+            <button>Officers</button>
+          </a>
+          <!--<cpa-force-details *ngIf="currentForce === selected" [forceDetail]="forceListDetails | async"></cpa-force-details>
           <cpa-force-officers *ngIf="currentForce === selectedOfficer" [forceOfficer]="forceListOfficers | async"></cpa-force-officers>
-       </li>
+--></li>
     </ul>
   `,
-  styles: [``]
+styleUrls: ['crime.css']
 })
 
 export class ForceListComponent implements OnInit {
@@ -35,13 +38,14 @@ export class ForceListComponent implements OnInit {
   constructor(private forceslistService: ForcesListService) {}
 
   ngOnInit(): void {
+    this.getForces();
   }
 
   getForces(): void {
     this.forceList = this.forceslistService.getForceFromServer();
   }
 
-  getForceDetails(currentForce: Force): void{
+  /*getForceDetails(currentForce: Force): void{
     this.forceListDetails = this.forceslistService.getForceDetailsFromServer(currentForce.id);
     this.selected = currentForce;
     // console.log(this.selected);
@@ -51,6 +55,6 @@ export class ForceListComponent implements OnInit {
     this.forceListOfficers = this.forceslistService.getForceOfficersFromServer(currentForce.id);
     this.selectedOfficer = currentForce;
     // console.log(this.selectedOfficer);
-  }
+  }*/
 
 }
