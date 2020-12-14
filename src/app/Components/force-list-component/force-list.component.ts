@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
   selector: 'cpa-force-list',
   template: `
     <h1 class="display-5">This is the list of forces in this area :</h1>
-    <div>
+<!--
     <ul>
        <li *ngFor="let currentForce of forceList | async">
           <cpa-force [force]="currentForce"></cpa-force>
@@ -19,12 +19,38 @@ import { Observable } from 'rxjs';
           <a [routerLink]="['/forces', currentForce.id, 'officers']">
             <button>Officers</button>
           </a>
-          <!--<cpa-force-details *ngIf="currentForce === selected" [forceDetail]="forceListDetails | async"></cpa-force-details>
+
+          <cpa-force-details *ngIf="currentForce === selected" [forceDetail]="forceListDetails | async"></cpa-force-details>
           <cpa-force-officers *ngIf="currentForce === selectedOfficer" [forceOfficer]="forceListOfficers | async"></cpa-force-officers>
---></li>
+        </li>
     </ul>
+-->
+    <div class="affiche">
+      <div *ngFor="let currentForce of forceList | async">
+      <div class="column">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div><img src="../../../assets/Images/PoliceUK/{{currentForce.id}}.jpg" alt="Insigne" width="65%"/></div>
+              </div>
+              <div class="flip-card-back">
+                <cpa-force [force]="currentForce"></cpa-force>
+                <div>
+                  <a [routerLink]="['/forces', currentForce.id]">
+                    <button>Details</button>
+                  </a>
+                  <a [routerLink]="['/forces', currentForce.id, 'officers']">
+                    <button>Officers</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   `,
-styleUrls: ['crime.css']
+styleUrls: ['forces.css']
 })
 
 export class ForceListComponent implements OnInit {
