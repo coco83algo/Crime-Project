@@ -4,10 +4,10 @@ import { Force } from '../../Interfaces/Force';
 @Component({
   selector: 'cpa-force',
   template: `
-    <span>
+    <h2>
       {{ force.id | titlecase }}
       <cpa-force-details></cpa-force-details>
-    </span>
+    </h2>
   `,
   styles: [],
 })

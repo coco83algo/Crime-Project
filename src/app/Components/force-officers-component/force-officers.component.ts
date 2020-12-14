@@ -1,13 +1,15 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ForceOfficer } from '../../Interfaces/ForceOfficer';
+import { ForcesListService } from '../../Services/forces-list-service/forces-list.service';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'cpa-force-officers',
   template: `
     <ng-container *ngIf="forceOfficer && forceOfficer.length; else noInfo">
       <div *ngFor="let currentOfficer of forceOfficer">
-        <div style="font-weight:bold">Officer Name : {{currentOfficer.name}} </div>
-        <div style="font-weight:bold">Officer Rank : {{currentOfficer.rank}} </div>
+        <div>Officer Name : {{currentOfficer.name}} </div>
+        <div>Officer Rank : {{currentOfficer.rank}} </div>
         <div [innerHtml]="currentOfficer.bio"></div>
       </div>
     </ng-container>
@@ -25,9 +27,13 @@ import { ForceOfficer } from '../../Interfaces/ForceOfficer';
 export class ForceOfficersComponent implements OnInit {
   @Input() forceOfficer!: ForceOfficer[];
 
-  constructor() { }
+  constructor(private forceslistService: ForcesListService, private activeRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-  }
+    this.activeRoute.paramMap.subscribe((params: ParamMap) => {
+      const force = params.get('currentForce');
+      this.forceslistService.getForceOfficersFromServer(force).subscribe(forceOfficer => ( this.forceOfficer = forceOfficer));
+      });
+    }
 
 }

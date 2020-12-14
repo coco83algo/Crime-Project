@@ -16,7 +16,7 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { MapComponent } from './Components/map-component/map.component';
 import { AccueilComponent } from './Components/accueil/accueil.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [

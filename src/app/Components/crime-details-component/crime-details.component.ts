@@ -4,7 +4,7 @@ import { Crime } from '../../Interfaces/Crime';
 
 @Component({
   selector: 'cpa-crime-details',
-  template:  `
+  template:`
   <div *ngIf="crimeDetail">
     <div>Crime ID : {{ crimeDetail.id }} </div>
     <div>Crime category : {{ crimeDetail.category }} </div>
