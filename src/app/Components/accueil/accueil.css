@@ -1,20 +1,317 @@
-h1{
+* {
+  font-family: 'Arial';
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+/*on travaille avec des block (plus facile a manipuler)*/
+div {
+  display: block;
+}
+
+#zone-page main{
+  display: block;
+}
+
+.font h2, .text h2, #zone-page .container-zone2 h2 {
+  display: block;
+  font-size: 25px;
+  margin-block-end: 20px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.txt p {
+  display: block;
+  text-decoration: none;
+}
+
+/*ZONE BANDEAU*/
+#zone-bandeau {
+  height: 60rem;
   text-align: center;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  height: 40rem;
 }
-
-mat-grid-tile {
-  background: lightblue;
-}
-
-.AU {
+#zone-bandeau > .bloc_bandeau {
+  padding: 0;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
   text-align: center;
+  clear: both;
+  width: 100%;
+  height: 100%;
 }
-.AU h2{
+
+#zone-bandeau > .bloc_bandeau::before {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  box-shadow: inset 0 0 12rem 0 rgba(0, 0, 0, 0.65);
+}
+
+#zone-bandeau > .cms_bloc_media img {
+  max-width: none;
+  flex: 0 0 auto;
+  z-index: 1;
+}
+.cms_bloc_media img {
+  max-width: 100%;
+  border: 0;
+  margin: 0 auto;
+}
+.cms_bloc_media * {
+  border: 0;
+  margin: 0 auto;
+}
+
+/*police du bandeau*/
+#zone-bandeau .font {
+  position: absolute;
+  top: 3rem;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 9.3rem);
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  justify-content: center;
+}
+#zone-bandeau .font h2 {
+  font-size: 5.5vw; /*police responsive*/
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.45em;
+  color: white;
+  text-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.5);
+}
+
+
+/*ZONE PAGE*/
+#zone-bandeau + #zone-page {
+  min-height: calc(100vh - 26.7rem - 60rem);
+  margin-top: 30rem; /*espace entre le bandeau et la zone page*/
+}
+
+#zone-page {
+  padding: 0;
+  position: relative;
+  z-index: 5;
+  background: white;
+}
+
+#zone-page .zone1 {
+  overflow: hidden;
+  background: #e6e6e6; /*gris clair*/
+  margin: 0 auto;
+  max-width: 120rem;
+  text-align: left;
+}
+/*CONTENEURS de zone1*/
+#zone-page .container_1{
+  overflow:hidden;
+  padding: 0;
+  clear: both;
+  text-align: left;
+  width: 100%;
+}
+#zone-page .container_2{
+  overflow:hidden;
+  padding: 0;
+  clear: both;
+  text-align: left;
+  width: 100%;
+}
+#zone-page .container_3{
+  overflow:hidden;
+  padding: 0;
+  clear: both;
+  text-align: left;
+  width: 100%;
+}
+
+/*bloc droite*/
+#zone-page .bloc_droite {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  width:50%;
+  float:right;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+#zone-page .bloc_droite img {
+  width:100%;
+  background: white;
+}
+/*bloc gauche*/
+#zone-page .bloc_gauche {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  width:50%;
+  float:left;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+#zone-page .bloc_gauche img {
+  width:100%;
+  background: white;
+}
+
+/*text a cote de image*/
+#zone-page .text {
+  overflow:hidden;
+  text-align: left;
+  padding: 2rem 2rem;
+}
+
+/*text du site coté cheminée*/
+
+#zone-page .zones .cms_bloc_text_media_droite {
+  padding-right: calc(50% + 4rem);
+}
+#zone-page .zones .cms_bloc_text_media_gauche, #zone-page .zone1 .cms_bloc_text_media_droite {
+  padding: .1rem 0;
+  position: relative;
+  height: 43.1rem;
+}
+#zone-page .zones .cms_bloc_text_media_droite .cms_bloc_media {
+  padding-left: .1rem;
+  background: white;
+  text-align: left;
+  left: 50%;
+}
+#zone-page .zones .cms_bloc_text_media_gauche .cms_bloc_media > img, #zone-page .zone1 .cms_bloc_text_media_droite .cms_bloc_media > img {
+  display: inline-block;
+  vertical-align: top;
+}
+
+#zone-page .zones .cms_bloc_text_media_droite {
+  padding-right: calc(50% + 4rem);
+}
+#zone-page .zones .cms_bloc_text_media_gauche, #zone-page .zone1 .cms_bloc_text_media_droite {
+  padding: .1rem 0;
+  position: relative;
+  height: 43.1rem;
+}
+
+
+/*ZONE 3*/
+#zone-page .zone2 {
+  background: white;
+  overflow: hidden;
+  position: relative;
+}
+
+#zone-page .container-zone2{
+  overflow:hidden;
+  padding: 0;
+  clear: both;
+  text-align: left;
+  width: 100%;
+}
+
+#zone-page .zone2 .bouton-contact {
+  background: #1d1d1b;
+  text-transform: uppercase;
+  border-top: 0.3rem solid #ffb000;
+  padding: 1.4rem 2rem;
+  margin-top: 10%;
+  line-height: 1.4;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  transition: background .2s linear;
+  font-weight: 600;
+}
+
+#zone-page .zone2 .bouton-contact:hover {
+  background-color: #ffb000;
+  border-color: black;
   color: black;
+  font-weight: 600;
 }
 
-.therese{
-  display: flex;
-  text-align: center;
+#zone-page .zone2 .bouton-realisation {
+  background: white;
+  text-transform: uppercase;
+  border: 0.3rem solid black;
+  padding: 1.4rem 2rem;
+  margin-top: 10%;
+  line-height: 1.4;
+  color: black;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  transition: background .2s linear;
+  font-weight: 600;
+}
+#zone-page .zone2 .bouton-realisation:hover {
+  background-color: #ffb000;
+  border-color: #ffb000;
+  color: black;
+  font-weight: 600;
+}
+
+/*RESPONSIVE*/
+@media (max-width: 1025px){
+  #zone-bandeau .inner h2 {
+      text-align: center;
+      font-size: 3.5rem;
+  }
+}
+@media (max-width: 1250px){
+  #zone-page .zone1 .cms_bloc_text_media_gauche .cms_bloc_text_content, #zone-page .zone1 .cms_bloc_text_media_droite .cms_bloc_text_content {
+      padding: 5rem 3rem;
+  }
+}
+
+@media (max-width:360px){
+  #zone-bandeau  {
+      height: 25rem;
+  }
+}
+
+@media screen and (max-width:785px) /*BON RESPONSIVE*/{
+  #zone-page .bloc_gauche{
+      width: 100%;
+      font-size: large;
+  }
+  #zone-page .bloc_droite{
+      width: 100%;
+      font-size: large;
+  }
+}
+
+@media screen and (max-width:675px) /*adaptatif bouton*/{
+  .centrer-bouton{
+      justify-content: center;
+      display: flex;
+      margin-left: 50%;
+      margin-right: 50%;
+  }
+}
+@media screen and (max-width:450px) /*adaptatif bouton*/{
+  .centrer-bouton{
+      justify-content: center;
+      display: grid;
+      margin-left: 50%;
+      margin-right: 50%;
+  }
 }
