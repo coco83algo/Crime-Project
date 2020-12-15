@@ -58,5 +58,33 @@
   height: 300px;
 }
 
+.btn,
+body .btn {
+  background:white;
+  border: 0.1rem solid black;
+  color: black;
+  font-weight: 600;
+}
 
+.btn:active {
+  background-color: #ffb000;
+  /*border-color: #ffb000;*/
+  border: 0.1rem solid black;
+  color: black;
+  font-weight: 600;
+}
 
+.text-center {
+  padding: 20px 2rem 27px;
+  background: #ffb000;
+  margin: 0 auto 25px;
+  border-radius: 0;
+}
+
+.h1,
+h1 {
+  font-size: 25px;
+  color: black;
+  font-weight: 300;
+  margin: 0;
+}

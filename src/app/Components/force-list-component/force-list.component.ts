@@ -37,10 +37,10 @@ import { Observable } from 'rxjs';
                 <cpa-force [force]="currentForce"></cpa-force>
                 <div>
                   <a [routerLink]="['/forces', currentForce.id]">
-                    <button>Details</button>
+                    <button class="btn">Details</button>
                   </a>
                   <a [routerLink]="['/forces', currentForce.id, 'officers']">
-                    <button>Officers</button>
+                    <button class="btn">Officers</button>
                   </a>
                 </div>
               </div>
