@@ -29,9 +29,19 @@ import { map, switchMap } from 'rxjs/operators';
         </div>
         <div class="container right">
           <div class="content">
-            <h2>Contacts</h2>
+            <h2>Website and telephone</h2>
             <p>{{forceDetail.url}}</p>
             <p>{{forceDetail.telephone}}</p>
+          </div>
+        </div>
+        <div class="container left">
+          <div class="content">
+            <h2>Engagement methods</h2>
+            <div *ngFor="let methods of forceDetail.engagement_methods">
+              <b>{{methods.title}}</b>
+              <p [innerHtml]="forceDetail.description"></p>
+              <p class="urlmethod">{{methods.url}}</p>
+              <p></p>
           </div>
         </div>
       </div>
@@ -50,5 +60,6 @@ export class ForceDetailsComponent implements OnInit {
     const force = params.get('currentForce');
     this.forceslistService.getForceDetailsFromServer(force).subscribe(forceDetail => (this.forceDetail = forceDetail));
     });
+    //console.log(this.forceDetail);
   }
 }

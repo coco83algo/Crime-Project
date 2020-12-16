@@ -6,5 +6,5 @@ export interface ForceDetails {
   telephone: string;
   description: string;
   url: string;
-  methods: EngagementMethods[];
+  engagement_methods: EngagementMethods[];
 }

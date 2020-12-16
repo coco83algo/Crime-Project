@@ -15,12 +15,6 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
                 <p [innerHtml]="currentOfficer.bio"></p>
               </div>
             </div>
-            <div class="container right">
-              <div class="content">
-                <h2>Contact information</h2>
-                <p>{{currentOfficer}}</p>
-              </div>
-            </div>
           </div>
         </div>
     </ng-container>
@@ -45,5 +39,6 @@ export class ForceOfficersComponent implements OnInit {
       const force = params.get('currentForce');
       this.forceslistService.getForceOfficersFromServer(force).subscribe(forceOfficer => ( this.forceOfficer = forceOfficer));
       });
+      console.log(this.forceOfficer);
     }
 }
