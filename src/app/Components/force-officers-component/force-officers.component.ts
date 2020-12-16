@@ -8,22 +8,33 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
   template: `
     <ng-container *ngIf="forceOfficer && forceOfficer.length; else noInfo">
       <div *ngFor="let currentOfficer of forceOfficer">
-        <div>Officer Name : {{currentOfficer.name}} </div>
-        <div>Officer Rank : {{currentOfficer.rank}} </div>
-        <div [innerHtml]="currentOfficer.bio"></div>
-      </div>
+        <div class="line">
+            <div class="container left">
+              <div class="content">
+                <h2>{{currentOfficer.rank}} {{currentOfficer.name}}</h2>
+                <p [innerHtml]="currentOfficer.bio"></p>
+              </div>
+            </div>
+            <div class="container right">
+              <div class="content">
+                <h2>Contact information</h2>
+                <p>{{currentOfficer}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
     </ng-container>
 
     <ng-template #noInfo>
       <div class="alternative">
-        No information available
+        <h2>No information available</h2>
       </div>
     </ng-template>
 
   `,
-  styles: [
-  ]
+  styleUrls: ['forceOfficers.css']
 })
+
 export class ForceOfficersComponent implements OnInit {
   @Input() forceOfficer!: ForceOfficer[];
 
@@ -35,5 +46,4 @@ export class ForceOfficersComponent implements OnInit {
       this.forceslistService.getForceOfficersFromServer(force).subscribe(forceOfficer => ( this.forceOfficer = forceOfficer));
       });
     }
-
 }
