@@ -1,10 +1,3 @@
-* {
-  font-family: 'Arial';
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-}
 /*on travaille avec des block (plus facile a manipuler)*/
 div {
   display: block;
@@ -32,7 +25,7 @@ div {
   height: 60rem;
   text-align: center;
   position: fixed;
-  top: 60px;
+  top: 0;
   left: 0;
   width: 100%;
   height: 40rem;
@@ -128,6 +121,7 @@ div {
   clear: both;
   text-align: left;
   width: 100%;
+  z-index: -1;
 }
 #zone-page .container_2{
   overflow:hidden;
@@ -267,51 +261,4 @@ div {
   border-color: #ffb000;
   color: black;
   font-weight: 600;
-}
-
-/*RESPONSIVE*/
-@media (max-width: 1025px){
-  #zone-bandeau .inner h2 {
-      text-align: center;
-      font-size: 3.5rem;
-  }
-}
-@media (max-width: 1250px){
-  #zone-page .zone1 .cms_bloc_text_media_gauche .cms_bloc_text_content, #zone-page .zone1 .cms_bloc_text_media_droite .cms_bloc_text_content {
-      padding: 5rem 3rem;
-  }
-}
-
-@media (max-width:360px){
-  #zone-bandeau  {
-      height: 25rem;
-  }
-}
-
-@media screen and (max-width:785px) /*BON RESPONSIVE*/{
-  #zone-page .bloc_gauche{
-      width: 100%;
-      font-size: large;
-  }
-  #zone-page .bloc_droite{
-      width: 100%;
-      font-size: large;
-  }
-}
-
-@media screen and (max-width:675px) /*adaptatif bouton*/{
-  .centrer-bouton{
-      justify-content: center;
-      display: flex;
-      margin-left: 50%;
-      margin-right: 50%;
-  }
-}
-@media screen and (max-width:450px) /*adaptatif bouton*/{
-  .centrer-bouton{
-      justify-content: center;
-      display: grid;
-      margin-left: 50%;
-      margin-right: 50%;
-  }
 }
