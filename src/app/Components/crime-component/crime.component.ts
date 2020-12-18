@@ -12,7 +12,7 @@ import { Force } from '../../Interfaces/Force';
   template: `
     <div class="text-center">
 	<h1 class="display-5">
-		Choose your force to see crimes
+		Choose your force to see crimes in 2020
 	</h1>
 </div>
 
@@ -21,7 +21,7 @@ import { Force } from '../../Interfaces/Force';
 		<div class="col-md-12">
 
 			<!-- Form starts -->
-			<form [formGroup]="registrationForm" (ngSubmit)="getCrimes()">
+			<form [formGroup]="registrationForm" (ngSubmit)="getCrimes(months)">
 				<div class="group-gap">
 					<div class="d-block my-3">
 
@@ -48,12 +48,9 @@ import { Force } from '../../Interfaces/Force';
   </div>
 </div>
 
-<!--<ul *ngIf="crimeList && (crimeList | async).length; else noInfo">-->
-<ul *ngIf="crimeList">
-    <li *ngFor="let currentCrime of crimeList | async">
-    <cpa-crime-details [crimeDetail]="currentCrime"></cpa-crime-details>
-    </li>
-</ul>
+<div class="graph" *ngIf="crimeList && crimeList.length != 0">
+  <cpa-chart [crimeListPerMonth]="crimeList"></cpa-chart>
+</div>
 
 <ng-template #noInfo>
       <div class="alternative">
@@ -68,10 +65,10 @@ import { Force } from '../../Interfaces/Force';
 export class CrimeComponent implements OnInit {
 
   constructor(public fb: FormBuilder, private crimesService: CrimesService, private httpClient: HttpClient) {}
-
-  crimeList!: Observable<Crime[]>;
+  crimeList: Array<Crime[]> = new Array();
   isSubmitted = false;
   Force: any = [];
+  months: string[] = ['01', '02', '03','04','05','06','07','08','09','10','11'];
 
   // Form
   registrationForm = this.fb.group({
@@ -93,12 +90,18 @@ export class CrimeComponent implements OnInit {
   }
 
   // tslint:disable-next-line: typedef
-  getCrimes() {
+  getCrimes(months: string[]) {
     this.isSubmitted = true;
-    if (this.registrationForm.valid) {
-      this.crimeList = this.crimesService.getCrimesFromServer(this.registrationForm.value.forceName);
-      console.log(this.crimeList);
-    }
+    this.crimeList = []
+    months.forEach(month => {
+      if(this.registrationForm.valid) {
+        this.httpClient
+        .get<Crime[]>('https://data.police.uk/api/crimes-no-location?category=all-crime&force=' + this.registrationForm.value.forceName.toLowerCase() + "&date=2020-" + month)
+        .subscribe(response => {this.crimeList.push(response);});
+      }
+    });
+    console.log(this.crimeList);
+    console.log(this.crimeList.length);
   }
 
   ngOnInit(): void {
