@@ -30,31 +30,10 @@ import { Force } from '../../Interfaces/Force';
               <option value="">Choose a force name</option>
               <option *ngFor="let force of Force" [ngValue]="force.id">{{ force.id | titlecase }}</option>
             </select>
-
-    <div class="container">
-      <div class="row custom-wrapper">
-        <div class="col-md-12">
-          <!-- Form starts -->
-          <form [formGroup]="registrationForm" (ngSubmit)="getCrimes()">
-            <div class="group-gap">
-              <div class="d-block my-3">
-                <div class="mb-3">
-                  <select
-                    class="custom-select"
-                    (change)="changeForce($event)"
-                    formControlName="forceName"
-                  >
-                    <option value="">Choose a force name</option>
-                    <option *ngFor="let force of Force" [ngValue]="force.id">
-                      {{ force.id | titlecase }}
-                    </option>
-                  </select>
-
                   <!-- error block -->
                   <div
                     class="invalid-feedback"
-                    *ngIf="isSubmitted && forceName.errors?.required"
-                  >
+                    *ngIf="isSubmitted && forceName.errors?.required">
                     <sup>*</sup>Please choose a force name
                   </div>
                 </div>
