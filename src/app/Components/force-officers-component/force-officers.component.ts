@@ -20,8 +20,9 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
     </ng-container>
 
     <ng-template #noInfo>
-      <div class="alternative">
-        <h2>No information available</h2>
+      <div class="alternative ">
+        <h1 class="text-center">We are sorry : no information available...</h1>
+        <button class="btn">Go back to forces</button>
       </div>
     </ng-template>
 

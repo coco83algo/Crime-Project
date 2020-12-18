@@ -8,23 +8,7 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'cpa-force-list',
   template: `
-    <h1 class="display-5">This is the list of forces in this area :</h1>
-<!--
-    <ul>
-       <li *ngFor="let currentForce of forceList | async">
-          <cpa-force [force]="currentForce"></cpa-force>
-          <a [routerLink]="['/forces', currentForce.id]">
-            <button>Details</button>
-          </a>
-          <a [routerLink]="['/forces', currentForce.id, 'officers']">
-            <button>Officers</button>
-          </a>
-
-          <cpa-force-details *ngIf="currentForce === selected" [forceDetail]="forceListDetails | async"></cpa-force-details>
-          <cpa-force-officers *ngIf="currentForce === selectedOfficer" [forceOfficer]="forceListOfficers | async"></cpa-force-officers>
-        </li>
-    </ul>
--->
+    <h1 class="text-center">This is the list of forces in this area :</h1>
     <div class="affiche">
       <div *ngFor="let currentForce of forceList | async">
       <div class="column">
