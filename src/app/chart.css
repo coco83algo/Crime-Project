@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Muli:200,300,400,600');
+
+body {
+  font-family: 'Muli', sans-serif;
+  background: #F5F5F6;
+}
+
+.btn-danger,
+body .btn-danger {
+  background:white;
+  border: 0.3rem solid black;
+  color: black;
+  font-weight: 600;
+}
+
+.btn-danger:active {
+  background-color: #ffb000;
+  /*border-color: #ffb000;*/
+  border: 0.3rem solid black;
+  color: black;
+  font-weight: 600;
+}
+
+.btn-group-lg>.btn,
+.btn-lg {
+  padding: 13px 15px 15px;
+  font-size: 16px;
+  border-radius: 0;
+  text-transform: uppercase;
+}
+
+.chart{
+}

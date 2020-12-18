@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { isEmpty } from 'rxjs/operators';
-import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { CrimesService } from '../../Services/crimes-service/crimes.service';
 import { Crime } from '../../Interfaces/Crime';
@@ -39,7 +37,6 @@ import { Force } from '../../Interfaces/Force';
                 </div>
               </div>
             </div>
-
             <!-- Submit Button -->
             <button type="submit" class="btn btn-danger btn-lg btn-block">
               Submit
@@ -54,41 +51,37 @@ import { Force } from '../../Interfaces/Force';
   <cpa-chart [crimeListPerMonth]="crimeList"></cpa-chart>
 </div>
 
-    <ng-template #noInfo>
-      <div class="alternative">No information available</div>
-    </ng-template>
-  `,
+<ng-template #noInfo>
+  <div class="alternative">No information available</div>
+</ng-template>
+`,
   styleUrls: ['crime.css'],
 })
 export class CrimeComponent implements OnInit {
-
-  constructor(public fb: FormBuilder, private crimesService: CrimesService, private httpClient: HttpClient) {}
   crimeList: Array<Crime[]> = new Array();
   isSubmitted = false;
   Force: any = [];
   months: string[] = ['01', '02', '03','04','05','06','07','08','09','10','11'];
+
+  constructor(public fb: FormBuilder, private crimesService: CrimesService, private httpClient: HttpClient) {}
 
   // Form
   registrationForm = this.fb.group({
     forceName: ['', [Validators.required]],
   });
 
-  // tslint:disable-next-line: typedef
   get forceName() {
     return this.registrationForm.get('forceName');
   }
 
   // Choose a force using select dropdown
-  // tslint:disable-next-line: typedef
   changeForce(e: { value: any; target: { value: any } }) {
-    // tslint:disable-next-line: no-unused-expression
     this.forceName &&
       this.forceName.setValue(e.target.value, {
         onlySelf: true,
       });
   }
 
-  // tslint:disable-next-line: typedef
   getCrimes(months: string[]) {
     this.isSubmitted = true;
     this.crimeList = []
@@ -99,8 +92,6 @@ export class CrimeComponent implements OnInit {
         .subscribe(response => {this.crimeList.push(response);});
       }
     });
-    console.log(this.crimeList);
-    console.log(this.crimeList.length);
   }
 
   ngOnInit(): void {

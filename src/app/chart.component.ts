@@ -22,14 +22,14 @@ import { Crime } from './Interfaces/Crime';
   </div>
   <button class="btn btn-danger btn-lg btn-block" (click)="startLiveData()">Show crimes</button>
   `,
-  styleUrls: ['./Components/crime-component/crime.css']
+  styleUrls: ['chart.css']
 })
 export class ChartComponent implements OnInit {
   @Input() crimeListPerMonth!: Crime[][];
   count;
   months = ["January", "February", "March", "April", "May", "June","August", "September", "October", "November"];
 
-  //Initialization of the dataset
+  //Initiation of the dataset
   data = [
     { name: "January", value: 0 },
     { name: "February", value: 0 },
