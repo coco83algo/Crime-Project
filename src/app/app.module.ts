@@ -17,6 +17,8 @@ import { MapComponent } from './Components/map-component/map.component';
 import { AccueilComponent } from './Components/accueil/accueil.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { NgxChartsModule }from '@swimlane/ngx-charts';
+import { ChartComponent } from './chart.component'
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
     CrimeComponent,
     CrimeDetailsComponent,
     MapComponent,
-    AccueilComponent
+    AccueilComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
     ReactiveFormsModule,
     LeafletModule,
     BrowserAnimationsModule,
-    MatGridListModule
+    MatGridListModule,
+    BrowserAnimationsModule,
+    NgxChartsModule
   ],
   providers: [
     ForcesListService
