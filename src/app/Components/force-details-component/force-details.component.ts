@@ -8,14 +8,46 @@ import { map, switchMap } from 'rxjs/operators';
   selector: 'cpa-force-details',
   template: `
     <div *ngIf="forceDetail">
-      <div>Unique force identifier : {{forceDetail.id}} </div>
-      <div>Forn name : {{forceDetail.name}} </div>
-      <div [innerHtml]="forceDetail.description"></div>
-      <div>Force website URL : {{forceDetail.url}} </div>
-      <div>Force telephone number : {{forceDetail.telephone}} </div>
+          <div class="line">
+        <div class="container left">
+          <div class="content">
+            <h2>Unique force identifier</h2>
+            <p>{{forceDetail.id}}</p>
+          </div>
+        </div>
+        <div class="container right">
+          <div class="content">
+            <h2>Forn name</h2>
+            <p>{{forceDetail.name}}</p>
+          </div>
+        </div>
+        <div class="container left">
+          <div class="content">
+            <h2>Description</h2>
+            <div [innerHtml]="forceDetail.description"></div>
+          </div>
+        </div>
+        <div class="container right">
+          <div class="content">
+            <h2>Website and telephone</h2>
+            <p>{{forceDetail.url}}</p>
+            <p>{{forceDetail.telephone}}</p>
+          </div>
+        </div>
+        <div class="container left">
+          <div class="content">
+            <h2>Engagement methods</h2>
+            <div *ngFor="let methods of forceDetail.engagement_methods">
+              <b>{{methods.title}}</b>
+              <p [innerHtml]="forceDetail.description"></p>
+              <p class="urlmethod">{{methods.url}}</p>
+              <p></p>
+          </div>
+        </div>
+      </div>
     </div>
   `,
-  styles: [],
+  styleUrls: ['forceDetails.css']
 })
 
 export class ForceDetailsComponent implements OnInit {
@@ -28,5 +60,6 @@ export class ForceDetailsComponent implements OnInit {
     const force = params.get('currentForce');
     this.forceslistService.getForceDetailsFromServer(force).subscribe(forceDetail => (this.forceDetail = forceDetail));
     });
+    //console.log(this.forceDetail);
   }
 }

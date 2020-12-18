@@ -160,6 +160,7 @@ footer {
   background-color: black;
   color: lightgrey;
   text-align:center;
+  z-index: 2;
 }
 
 footer p {
