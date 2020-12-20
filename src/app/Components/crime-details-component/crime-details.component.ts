@@ -4,14 +4,7 @@ import { Crime } from '../../Interfaces/Crime';
 
 @Component({
   selector: 'cpa-crime-details',
-  template:`
-  <div *ngIf="crimeDetail">
-    <div>Crime ID : {{ crimeDetail.id }} </div>
-    <div>Crime category : {{ crimeDetail.category }} </div>
-    <div>{{ crimeDetail.outcome_status? "Status :" + crimeDetail.outcome_status.category : "" }} </div>
-    <div>Date : {{ crimeDetail.outcome_status ? crimeDetail.outcome_status.date : "No information available" }} </div>
-</div>
-`,
+  templateUrl: 'crimeDetails.html',
   styles: []
 })
 export class CrimeDetailsComponent implements OnInit {

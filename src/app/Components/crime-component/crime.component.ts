@@ -7,55 +7,7 @@ import { Force } from '../../Interfaces/Force';
 
 @Component({
   selector: 'cpa-crime-component',
-  template: `
-  <cpa-navbar></cpa-navbar>
-    <div class="text-center">
-	<h1 class="display-5">
-		Choose your force to see crimes in 2020
-	</h1>
-</div>
-
-<div class="container">
-	<div class="row custom-wrapper">
-		<div class="col-md-12">
-
-			<!-- Form starts -->
-			<form [formGroup]="registrationForm" (ngSubmit)="getCrimes(months)">
-				<div class="group-gap">
-					<div class="d-block my-3">
-
-          <div class="mb-3">
-            <select class="custom-select" (change)="changeForce($event)" formControlName="forceName">
-              <option value="">Choose a force name</option>
-              <option *ngFor="let force of Force" [ngValue]="force.id">{{ force.id | titlecase }}</option>
-            </select>
-                  <!-- error block -->
-                  <div
-                    class="invalid-feedback"
-                    *ngIf="isSubmitted && forceName.errors?.required">
-                    <sup>*</sup>Please choose a force name
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Submit Button -->
-            <button type="submit" class="btn btn-danger btn-lg btn-block">
-              Submit
-            </button>
-          </form>
-          <!-- Form ends -->
-        </div>
-      </div>
-    </div>
-
-<div class="graph" *ngIf="crimeList && crimeList.length != 0">
-  <cpa-chart [crimeListPerMonth]="crimeList"></cpa-chart>
-</div>
-
-<ng-template #noInfo>
-  <div class="alternative">No information available</div>
-</ng-template>
-`,
+  templateUrl: 'crime.html',
   styleUrls: ['crime.css'],
 })
 export class CrimeComponent implements OnInit {
