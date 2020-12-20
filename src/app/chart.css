@@ -29,5 +29,11 @@ body .btn-danger {
   text-transform: uppercase;
 }
 
+
+button:disabled,
+button[disabled]{
+  background-color: #cccccc;
+}
+
 .chart{
 }

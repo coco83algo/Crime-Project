@@ -20,7 +20,7 @@ import { Crime } from './Interfaces/Crime';
       (select)="onSelect($event)">
     </ngx-charts-bar-vertical>
   </div>
-  <button class="btn btn-danger btn-lg btn-block" (click)="startLiveData()">Show crimes</button>
+  <button [disabled]="crimeListPerMonth.length != 11" class="btn btn-danger btn-lg btn-block" (click)="startLiveData()">Show crimes</button>
   `,
   styleUrls: ['chart.css']
 })
