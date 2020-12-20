@@ -8,6 +8,7 @@ import { Force } from '../../Interfaces/Force';
 @Component({
   selector: 'cpa-crime-component',
   template: `
+  <cpa-navbar></cpa-navbar>
     <div class="text-center">
 	<h1 class="display-5">
 		Choose your force to see crimes in 2020

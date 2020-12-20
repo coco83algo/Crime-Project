@@ -7,6 +7,7 @@ declare let L;
 @Component({
   selector: 'cpa-map',
   template: `
+  <cpa-navbar></cpa-navbar>
   <div id="forcesmap" style="height: 800px;"></div>
   `,
 

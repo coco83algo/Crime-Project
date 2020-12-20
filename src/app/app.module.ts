@@ -18,7 +18,8 @@ import { AccueilComponent } from './Components/accueil/accueil.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { NgxChartsModule }from '@swimlane/ngx-charts';
-import { ChartComponent } from './chart.component'
+import { ChartComponent } from './chart.component';
+import { NavbarComponent } from './navbar.component'
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ChartComponent } from './chart.component'
     CrimeDetailsComponent,
     MapComponent,
     AccueilComponent,
-    ChartComponent
+    ChartComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

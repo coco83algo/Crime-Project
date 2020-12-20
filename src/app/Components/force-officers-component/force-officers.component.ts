@@ -7,6 +7,7 @@ import {Location} from '@angular/common';
 @Component({
   selector: 'cpa-force-officers',
   template: `
+  <cpa-navbar></cpa-navbar>
     <ng-container *ngIf="forceOfficer && forceOfficer.length; else noInfo">
       <div *ngFor="let currentOfficer of forceOfficer">
         <div class="line">

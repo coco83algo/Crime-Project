@@ -8,6 +8,7 @@ import {Location} from '@angular/common';
   selector: 'cpa-force-details',
   template: `
     <div *ngIf="forceDetail">
+      <cpa-navbar></cpa-navbar>
           <div class="line">
         <div class="container left">
           <div class="content">
