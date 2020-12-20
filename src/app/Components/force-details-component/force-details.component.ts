@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ForceDetails } from '../../Interfaces/ForceDetails';
 import { ForcesListService } from '../../Services/forces-list-service/forces-list.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { map, switchMap } from 'rxjs/operators';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'cpa-force-details',
@@ -46,6 +46,7 @@ import { map, switchMap } from 'rxjs/operators';
         </div>
       </div>
     </div>
+    <div class="return"><button class="btn" (click)="backClicked()">Go back to forces</button></div>
   `,
   styleUrls: ['forceDetails.css']
 })
@@ -53,7 +54,11 @@ import { map, switchMap } from 'rxjs/operators';
 export class ForceDetailsComponent implements OnInit {
   @Input() forceDetail?: ForceDetails;
 
-  constructor(private forceslistService: ForcesListService, private activeRoute: ActivatedRoute) {}
+  constructor(private forceslistService: ForcesListService, private activeRoute: ActivatedRoute, private _location: Location) {}
+
+  backClicked() {
+    this._location.back();
+  }
 
   ngOnInit(): void {
   this.activeRoute.paramMap.subscribe((params: ParamMap) => {

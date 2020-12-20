@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ForceOfficer } from '../../Interfaces/ForceOfficer';
 import { ForcesListService } from '../../Services/forces-list-service/forces-list.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'cpa-force-officers',
@@ -22,9 +23,9 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
     <ng-template #noInfo>
       <div class="alternative ">
         <h1 class="text-center">We are sorry : no information available...</h1>
-        <button class="btn">Go back to forces</button>
       </div>
     </ng-template>
+    <div class="return"><button class="btn" (click)="backClicked()">Go back to forces</button></div>
 
   `,
   styleUrls: ['forceOfficers.css']
@@ -33,7 +34,11 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 export class ForceOfficersComponent implements OnInit {
   @Input() forceOfficer!: ForceOfficer[];
 
-  constructor(private forceslistService: ForcesListService, private activeRoute: ActivatedRoute) { }
+  constructor(private forceslistService: ForcesListService, private activeRoute: ActivatedRoute, private _location: Location) { }
+
+  backClicked() {
+    this._location.back();
+  }
 
   ngOnInit(): void {
     this.activeRoute.paramMap.subscribe((params: ParamMap) => {

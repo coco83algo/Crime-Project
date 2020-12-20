@@ -99,6 +99,35 @@
   border-radius: 6px;
 }
 
+.return{
+  padding-bottom: 3%;
+  padding-left: 42%
+}
+
+.btn,
+body .btn {
+  background:white;
+  border: 0.1rem solid black;
+  color: black;
+  font-weight: 600;
+}
+
+.btn:active {
+  background-color: #ffb000;
+  /*border-color: #ffb000;*/
+  border: 0.1rem solid black;
+  color: black;
+  font-weight: 600;
+}
+
+.btn{
+  padding: 13px 15px 15px;
+  font-size: 16px;
+  border-radius: 0;
+  text-transform: uppercase;
+}
+
+
 /* Media queries - Responsive line on screens less than 600px wide */
 @media screen and (max-width: 600px) {
 /* Place the timelime to the left */
