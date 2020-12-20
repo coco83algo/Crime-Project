@@ -1,0 +1,26 @@
+<cpa-navbar></cpa-navbar>
+    <h1 class="text-center">This is the list of forces in this area :</h1>
+    <div class="affiche">
+      <div *ngFor="let currentForce of forceList | async">
+      <div class="column">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div><img src="../../../assets/Images/PoliceUK/{{currentForce.id}}.jpg" alt="Insigne {{currentForce.id}}" width="65%"/></div>
+              </div>
+              <div class="flip-card-back">
+                <cpa-force [force]="currentForce"></cpa-force>
+                <div>
+                  <a [routerLink]="['/forces', currentForce.id]">
+                    <button class="btn">Details</button>
+                  </a>
+                  <a [routerLink]="['/forces', currentForce.id, 'officers']">
+                    <button class="btn">Officers</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

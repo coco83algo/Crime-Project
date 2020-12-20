@@ -1,0 +1,20 @@
+<cpa-navbar></cpa-navbar>
+    <ng-container *ngIf="forceOfficer && forceOfficer.length; else noInfo">
+      <div *ngFor="let currentOfficer of forceOfficer">
+        <div class="line">
+            <div class="container left">
+              <div class="content">
+                <h2>{{currentOfficer.rank}} {{currentOfficer.name}}</h2>
+                <p [innerHtml]="currentOfficer.bio"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </ng-container>
+
+    <ng-template #noInfo>
+      <div class="alternative ">
+        <h1 class="text-center">We are sorry : no information available...</h1>
+      </div>
+    </ng-template>
+    <div class="return"><button class="btn" (click)="backClicked()">Go back to forces</button></div>
