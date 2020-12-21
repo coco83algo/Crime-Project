@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'cpa-force-list',
   template: `
+  <cpa-navbar></cpa-navbar>
     <h1 class="text-center">This is the list of forces in this area :</h1>
     <div class="affiche">
       <div *ngFor="let currentForce of forceList | async">
@@ -15,7 +16,7 @@ import { Observable } from 'rxjs';
         <div class="flip-card">
           <div class="flip-card-inner">
               <div class="flip-card-front">
-                <div><img src="../../../assets/Images/PoliceUK/{{currentForce.id}}.jpg" alt="Insigne" width="65%"/></div>
+                <div><img src="../../../assets/Images/PoliceUK/{{currentForce.id}}.jpg" alt="Insigne {{currentForce.id}}" width="65%"/></div>
               </div>
               <div class="flip-card-back">
                 <cpa-force [force]="currentForce"></cpa-force>

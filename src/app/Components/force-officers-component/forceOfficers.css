@@ -158,3 +158,15 @@ body .btn {
   color: black;
   font-weight: 600;
 }
+
+.btn{
+  padding: 13px 15px 15px;
+  font-size: 16px;
+  border-radius: 0;
+  text-transform: uppercase;
+}
+
+.return{
+  padding-bottom: 3%;
+  padding-left: 42%
+}

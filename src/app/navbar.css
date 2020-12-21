@@ -1,0 +1,39 @@
+nav {
+  overflow: hidden;
+  background-color: black;
+  position: relative;  /*nav bar fixée*/
+  top: 0;
+  width: 100%;
+}
+
+nav ul {
+  display: flex; /* Ce conteneur est "flexible"*/
+  flex-direction: row; /* Les éléments sont mis côte à côte*/
+  justify-content: space-between; /* Les éléments sont répartis équitablement*/
+  background-color: black; /* Couleur du fond*/
+}
+nav ul li {
+  display: flex; /* Ce conteneur est "flexible"*/
+  justify-content: center; /* Les éléments portés sont centrés à l'horizontal*/
+  list-style-type: none; /* Cette liste n'a pas de puce*/
+  font-size: x-large; /* Le texte est grossi en XL*/
+  flex-grow: 1; /* L'espace occupé est élargie*/
+}
+nav ul li a {
+  padding: 16px; /* Marge intérieure*/
+  color: white; /* Couleur du texte*/
+  list-style-type: none;
+}
+nav ul li:hover {
+  background-color:#ffb000; /* Couleur du fond au passage de la souris*/
+}
+nav ul li a:hover {
+  color: black; /* Couleur ecriture au passage de la souris*/
+}
+
+nav input {
+  display: block;
+  position: absolute;
+  opacity: 0;
+  z-index: 2;
+}
