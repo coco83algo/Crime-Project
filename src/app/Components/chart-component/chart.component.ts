@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Crime } from './Interfaces/Crime';
+import { Crime } from '../../Interfaces/Crime';
 
 @Component({
   selector: 'cpa-chart',
@@ -27,21 +27,21 @@ import { Crime } from './Interfaces/Crime';
 export class ChartComponent implements OnInit {
   @Input() crimeListPerMonth!: Crime[][];
   count;
-  months = ["January", "February", "March", "April", "May", "June","August", "September", "October", "November"];
+  months = ['January', 'February', 'March', 'April', 'May', 'June','August', 'September', 'October', 'November'];
 
-  //Initiation of the dataset
+  // Initiation of the dataset
   data = [
-    { name: "January", value: 0 },
-    { name: "February", value: 0 },
-    { name: "March", value: 0 },
-    { name: "April", value: 0 },
-    { name: "May", value: 0 },
-    { name: "June", value: 0 },
-    { name: "July", value: 0 },
-    { name: "August", value: 0 },
-    { name: "September", value: 0 },
-    { name: "October", value: 0 },
-    { name: "November", value: 0 }
+    { name: 'January', value: 0 },
+    { name: 'February', value: 0 },
+    { name: 'March', value: 0 },
+    { name: 'April', value: 0 },
+    { name: 'May', value: 0 },
+    { name: 'June', value: 0 },
+    { name: 'July', value: 0 },
+    { name: 'August', value: 0 },
+    { name: 'September', value: 0 },
+    { name: 'October', value: 0 },
+    { name: 'November', value: 0 }
   ];
 
   constructor() {}

@@ -14,12 +14,12 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CrimeDetailsComponent } from './Components/crime-details-component/crime-details.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { MapComponent } from './Components/map-component/map.component';
-import { AccueilComponent } from './Components/accueil/accueil.component';
+import { AccueilComponent } from './Components/accueil-component/accueil.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { NgxChartsModule }from '@swimlane/ngx-charts';
-import { ChartComponent } from './chart.component';
-import { NavbarComponent } from './navbar.component'
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { ChartComponent } from './Components/chart-component/chart.component';
+import { NavbarComponent } from './Components/navbar-component/navbar.component';
 
 @NgModule({
   declarations: [

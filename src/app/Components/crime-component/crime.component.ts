@@ -62,7 +62,7 @@ export class CrimeComponent implements OnInit {
   crimeList: Array<Crime[]> = new Array();
   isSubmitted = false;
   Force: any = [];
-  months: string[] = ['01', '02', '03','04','05','06','07','08','09','10','11'];
+  months: string[] = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11'];
 
   constructor(public fb: FormBuilder, private crimesService: CrimesService, private httpClient: HttpClient) {}
 
