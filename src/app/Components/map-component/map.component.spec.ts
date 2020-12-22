@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
+import { HttpClient } from '@angular/common/http';
 import { MapComponent } from './map.component';
+import { Map } from 'leaflet';
 
 describe('MapComponent', () => {
   let component: MapComponent;
@@ -8,6 +10,7 @@ describe('MapComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
       declarations: [ MapComponent ]
     })
     .compileComponents();
