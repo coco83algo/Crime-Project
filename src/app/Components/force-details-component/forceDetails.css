@@ -130,7 +130,7 @@ body .btn {
 
 /* Media queries - Responsive line on screens less than 600px wide */
 @media screen and (max-width: 600px) {
-/* Place the timelime to the left */
+/* Place the line to the left */
   .line::after {
     left: 31px;
   }

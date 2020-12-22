@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { CrimesService } from '../../Services/crimes-service/crimes.service';
+import { ForcesListService } from '../../Services/forces-list-service/forces-list.service';
 import { Crime } from '../../Interfaces/Crime';
-import { Force } from '../../Interfaces/Force';
 
 @Component({
   selector: 'cpa-crime-component',
@@ -16,7 +16,7 @@ export class CrimeComponent implements OnInit {
   Force: any = [];
   months: string[] = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11'];
 
-  constructor(public fb: FormBuilder, private crimesService: CrimesService, private httpClient: HttpClient) {}
+  constructor(public fb: FormBuilder, private crimesService: CrimesService, private forceslistService: ForcesListService, private httpClient: HttpClient) {}
 
   // Form
   registrationForm = this.fb.group({
@@ -40,16 +40,14 @@ export class CrimeComponent implements OnInit {
     this.crimeList = []
     months.forEach(month => {
       if(this.registrationForm.valid) {
-        this.httpClient
-        .get<Crime[]>('https://data.police.uk/api/crimes-no-location?category=all-crime&force=' + this.registrationForm.value.forceName.toLowerCase() + "&date=2020-" + month)
+        this.crimesService.getCrimesWithDateFromServer(this.registrationForm.value.forceName.toLowerCase(), month)
         .subscribe(response => {this.crimeList.push(response);});
       }
     });
   }
 
   ngOnInit(): void {
-    this.httpClient
-      .get<Force[]>('https://data.police.uk/api/forces')
+    this.forceslistService.getForceFromServer()
       .subscribe((response) => {
         this.Force = response;
       });

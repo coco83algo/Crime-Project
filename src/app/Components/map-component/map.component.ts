@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { MapService } from '../../map.service';
 import 'leaflet';
 
 declare let L;
@@ -14,7 +15,7 @@ declare let L;
   styles: [],
 })
 export class MapComponent {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,  private mapService: MapService ) {}
 
   ngOnInit() {
     let myforcesmap;
@@ -44,7 +45,7 @@ export class MapComponent {
             props.name +
             '</b><br />' +
             props.crimeRate +
-            ' crimes in 2020'
+            ' crimes in total'
           : 'Hover over an area');
     };
 
@@ -76,7 +77,7 @@ export class MapComponent {
       info.update(layer.feature.properties);
     }
 
-    this.http.get('assets/UKforces.geojson').subscribe((json: any) => {
+    this.mapService.getUKjson1().subscribe((json: any) => {
       geojson = L.geoJSON(json, {
         style (feature) {
           if (feature.properties.crimeRate < 50000) {
@@ -92,7 +93,7 @@ export class MapComponent {
           else if (
             feature.properties.crimeRate >= 50000 &&
             feature.properties.crimeRate < 100000
-          ) {
+            ) {
             // 50 000 & 100 000
             return {
               color: 'white',
@@ -101,11 +102,11 @@ export class MapComponent {
               dashArray: '3',
               weight: 2,
             };
- }
+          }
           else if (
             feature.properties.crimeRate >= 100000 &&
             feature.properties.crimeRate < 150000
-          ) {
+            ) {
             // 100 000 & 150 000
             return {
               color: 'white',
@@ -114,11 +115,11 @@ export class MapComponent {
               dashArray: '3',
               weight: 2,
             };
- }
+          }
           else if (
             feature.properties.crimeRate >= 150000 &&
             feature.properties.crimeRate < 250000
-          ) {
+            ) {
             // 150 000 & 250 000
             return {
               color: 'white',
@@ -127,11 +128,11 @@ export class MapComponent {
               dashArray: '3',
               weight: 2,
             };
- }
+          }
           else if (
             feature.properties.crimeRate >= 250000 &&
             feature.properties.crimeRate < 500000
-          ) {
+            ) {
             // 250 000 & 500 000
             return {
               color: 'white',
@@ -140,7 +141,7 @@ export class MapComponent {
               dashArray: '3',
               weight: 2,
             };
- }
+          }
           else if (feature.properties.crimeRate >= 500000) {
             // > 500 000
             return {
@@ -150,7 +151,7 @@ export class MapComponent {
               dashArray: '3',
               weight: 2,
             };
- }
+          }
           else {
             return {
               color: 'white',
@@ -159,7 +160,7 @@ export class MapComponent {
               dashArray: '3',
               weight: 2,
             };
- }
+          }
         },
         onEachFeature: function onEachFeature(feature, layer) {
           layer.on({
@@ -171,7 +172,7 @@ export class MapComponent {
       }).addTo(myforcesmap);
     });
 
-    this.http.get('assets/UKforces2.geojson').subscribe((json: any) => {
+    this.mapService.getUKjson2().subscribe((json: any) => {
       geojson = L.geoJSON(json, {
         style(feature) {
           if (feature.properties.crimeRate < 50000) {
@@ -187,7 +188,7 @@ export class MapComponent {
           else if (
             feature.properties.crimeRate >= 50000 &&
             feature.properties.crimeRate < 100000
-          ) {
+            ) {
             // 50 000 & 100 000
             return {
               color: 'white',
@@ -196,11 +197,11 @@ export class MapComponent {
               dashArray: '3',
               weight: 2,
             };
- }
+          }
           else if (
             feature.properties.crimeRate >= 100000 &&
             feature.properties.crimeRate < 150000
-          ) {
+            ) {
             // 100 000 & 150 000
             return {
               color: 'white',
@@ -209,11 +210,11 @@ export class MapComponent {
               dashArray: '3',
               weight: 2,
             };
- }
+          }
           else if (
             feature.properties.crimeRate >= 150000 &&
             feature.properties.crimeRate < 250000
-          ) {
+            ) {
             // 150 000 & 250 000
             return {
               color: 'white',
@@ -222,11 +223,11 @@ export class MapComponent {
               dashArray: '3',
               weight: 2,
             };
- }
+          }
           else if (
             feature.properties.crimeRate >= 250000 &&
             feature.properties.crimeRate < 500000
-          ) {
+            ) {
             // 250 000 & 500 000
             return {
               color: 'white',
@@ -235,7 +236,7 @@ export class MapComponent {
               dashArray: '3',
               weight: 2,
             };
- }
+          }
           else if (feature.properties.crimeRate >= 500000) {
             // > 500 000
             return {
@@ -245,7 +246,7 @@ export class MapComponent {
               dashArray: '3',
               weight: 2,
             };
- }
+          }
           else {
             return {
               color: 'white',
@@ -254,7 +255,7 @@ export class MapComponent {
               dashArray: '3',
               weight: 2,
             };
- }
+          }
         },
         onEachFeature: function onEachFeature(feature, layer) {
           layer.on({
