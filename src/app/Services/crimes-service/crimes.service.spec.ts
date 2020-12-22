@@ -7,7 +7,7 @@ import { CrimesService } from './crimes.service';
 describe('CrimesService', () => {
   let service: CrimesService;
   let httpClientSpy: { get: jasmine.Spy };
-
+});
 /*  beforeEach(() => {
     TestBed.configureTestingModule({});
     service = TestBed.inject(CrimesService);
