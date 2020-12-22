@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { MapService } from '../../map.service';
 import 'leaflet';
 
 declare let L;
@@ -14,7 +15,7 @@ declare let L;
   styles: [],
 })
 export class MapComponent {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,  private mapService: MapService ) {}
 
   ngOnInit() {
     let myforcesmap;
@@ -44,7 +45,7 @@ export class MapComponent {
             props.name +
             '</b><br />' +
             props.crimeRate +
-            ' crimes in 2020'
+            ' crimes in total'
           : 'Hover over an area');
     };
 
@@ -76,7 +77,7 @@ export class MapComponent {
       info.update(layer.feature.properties);
     }
 
-    this.http.get('assets/UKforces.geojson').subscribe((json: any) => {
+    this.mapService.getUKjson1().subscribe((json: any) => {
       geojson = L.geoJSON(json, {
         style (feature) {
           if (feature.properties.crimeRate < 50000) {
@@ -171,7 +172,7 @@ export class MapComponent {
       }).addTo(myforcesmap);
     });
 
-    this.http.get('assets/UKforces2.geojson').subscribe((json: any) => {
+    this.mapService.getUKjson2().subscribe((json: any) => {
       geojson = L.geoJSON(json, {
         style(feature) {
           if (feature.properties.crimeRate < 50000) {
