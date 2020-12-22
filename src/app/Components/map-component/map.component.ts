@@ -92,7 +92,7 @@ export class MapComponent {
           else if (
             feature.properties.crimeRate >= 50000 &&
             feature.properties.crimeRate < 100000
-          ) {
+            ) {
             // 50 000 & 100 000
             return {
               color: 'white',
@@ -101,11 +101,11 @@ export class MapComponent {
               dashArray: '3',
               weight: 2,
             };
- }
+          }
           else if (
             feature.properties.crimeRate >= 100000 &&
             feature.properties.crimeRate < 150000
-          ) {
+            ) {
             // 100 000 & 150 000
             return {
               color: 'white',
@@ -114,11 +114,11 @@ export class MapComponent {
               dashArray: '3',
               weight: 2,
             };
- }
+          }
           else if (
             feature.properties.crimeRate >= 150000 &&
             feature.properties.crimeRate < 250000
-          ) {
+            ) {
             // 150 000 & 250 000
             return {
               color: 'white',
@@ -127,11 +127,11 @@ export class MapComponent {
               dashArray: '3',
               weight: 2,
             };
- }
+          }
           else if (
             feature.properties.crimeRate >= 250000 &&
             feature.properties.crimeRate < 500000
-          ) {
+            ) {
             // 250 000 & 500 000
             return {
               color: 'white',
@@ -140,7 +140,7 @@ export class MapComponent {
               dashArray: '3',
               weight: 2,
             };
- }
+          }
           else if (feature.properties.crimeRate >= 500000) {
             // > 500 000
             return {
@@ -150,7 +150,7 @@ export class MapComponent {
               dashArray: '3',
               weight: 2,
             };
- }
+          }
           else {
             return {
               color: 'white',
@@ -159,7 +159,7 @@ export class MapComponent {
               dashArray: '3',
               weight: 2,
             };
- }
+          }
         },
         onEachFeature: function onEachFeature(feature, layer) {
           layer.on({
@@ -187,7 +187,7 @@ export class MapComponent {
           else if (
             feature.properties.crimeRate >= 50000 &&
             feature.properties.crimeRate < 100000
-          ) {
+            ) {
             // 50 000 & 100 000
             return {
               color: 'white',
@@ -196,11 +196,11 @@ export class MapComponent {
               dashArray: '3',
               weight: 2,
             };
- }
+          }
           else if (
             feature.properties.crimeRate >= 100000 &&
             feature.properties.crimeRate < 150000
-          ) {
+            ) {
             // 100 000 & 150 000
             return {
               color: 'white',
@@ -209,11 +209,11 @@ export class MapComponent {
               dashArray: '3',
               weight: 2,
             };
- }
+          }
           else if (
             feature.properties.crimeRate >= 150000 &&
             feature.properties.crimeRate < 250000
-          ) {
+            ) {
             // 150 000 & 250 000
             return {
               color: 'white',
@@ -222,11 +222,11 @@ export class MapComponent {
               dashArray: '3',
               weight: 2,
             };
- }
+          }
           else if (
             feature.properties.crimeRate >= 250000 &&
             feature.properties.crimeRate < 500000
-          ) {
+            ) {
             // 250 000 & 500 000
             return {
               color: 'white',
@@ -235,7 +235,7 @@ export class MapComponent {
               dashArray: '3',
               weight: 2,
             };
- }
+          }
           else if (feature.properties.crimeRate >= 500000) {
             // > 500 000
             return {
@@ -245,7 +245,7 @@ export class MapComponent {
               dashArray: '3',
               weight: 2,
             };
- }
+          }
           else {
             return {
               color: 'white',
@@ -254,7 +254,7 @@ export class MapComponent {
               dashArray: '3',
               weight: 2,
             };
- }
+          }
         },
         onEachFeature: function onEachFeature(feature, layer) {
           layer.on({
