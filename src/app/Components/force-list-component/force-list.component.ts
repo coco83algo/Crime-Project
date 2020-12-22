@@ -1,7 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Force } from '../../Interfaces/Force';
-import { ForceDetails } from '../../Interfaces/ForceDetails';
-import { ForceOfficer } from '../../Interfaces/ForceOfficer';
 import { ForcesListService } from '../../Services/forces-list-service/forces-list.service';
 import { Observable } from 'rxjs';
 
