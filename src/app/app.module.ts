@@ -7,9 +7,9 @@ import { ForceListComponent } from './Components/force-list-component/force-list
 import { ForceComponent } from './Components/force-component/force.component';
 import { ForceDetailsComponent } from './Components/force-details-component/force-details.component';
 import { ForcesListService } from './Services/forces-list-service/forces-list.service';
-import { MapService } from './map.service'
+import { MapService } from './map.service';
 import { HttpClientModule } from '@angular/common/http';
-import { HttpClient } from '@angular/common/http';
+// import { HttpClient } from '@angular/common/http';
 import { ForceOfficersComponent } from './Components/force-officers-component/force-officers.component';
 import { CrimeComponent } from './Components/crime-component/crime.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -41,7 +41,7 @@ import { NavbarComponent } from './Components/navbar-component/navbar.component'
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    HttpClient,
+    // HttpClient,
     FormsModule,
     ReactiveFormsModule,
     LeafletModule,
