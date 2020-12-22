@@ -8,4 +8,7 @@ import { Component } from '@angular/core';
   styles: [],
 })
 export class AppComponent {
+  title(title: any) {
+    throw new Error('Title of the app.');
+  }
 }
