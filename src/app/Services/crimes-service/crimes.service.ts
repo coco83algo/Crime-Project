@@ -15,4 +15,10 @@ export class CrimesService {
     return this.httpClient
         .get<Crime[]>('https://data.police.uk/api/crimes-no-location?category=all-crime&force=' + currentForceId.toLowerCase());
   }
+
+  getCrimesWithDateFromServer(currentForceId: string, month: string): Observable<Crime[]> {
+    console.log(currentForceId);
+    return this.httpClient
+        .get<Crime[]>('https://data.police.uk/api/crimes-no-location?category=all-crime&force=' + currentForceId + "&date=2020-" + month);
+  }
 }
