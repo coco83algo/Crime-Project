@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ForceListComponent } from './force-list.component';
 
 describe('ForceListComponent', () => {

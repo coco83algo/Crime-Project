@@ -3,20 +3,23 @@ import { TestBed } from '@angular/core/testing';
 import { Crime } from '../../Interfaces/Crime';
 import { CrimeStatus } from '../../Interfaces/CrimeStatus';
 import { CrimesService } from './crimes.service';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 describe('CrimesService', () => {
   let service: CrimesService;
   let httpClientSpy: { get: jasmine.Spy };
-});
-/*  beforeEach(() => {
-    TestBed.configureTestingModule({});
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+       imports: [ HttpClientTestingModule ]
+    });
     service = TestBed.inject(CrimesService);
   });
 
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
-});*/
+});
 
 /*beforeEach(() => {
   // TODO: spy on other methods too

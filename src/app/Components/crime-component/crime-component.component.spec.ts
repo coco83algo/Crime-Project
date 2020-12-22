@@ -1,14 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { of } from 'rxjs';
+import { CrimesService } from '../../Services/crimes-service/crimes.service';
 import { CrimeComponent } from './crime.component';
 
 describe('CrimeComponentComponent', () => {
   let component: CrimeComponent;
   let fixture: ComponentFixture<CrimeComponent>;
+  let weather = of('weather');
+  let CrimesServiceSpy = jasmine.createSpyObj('WeatherService', ['getCrimes']);
+  CrimesServiceSpy.getWeather.and.returnValue(weather);
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CrimeComponent ]
+      declarations: [ CrimeComponent ],
+      providers:    [ {provide: CrimesService, useValue: CrimesServiceSpy } ]
     })
     .compileComponents();
   });

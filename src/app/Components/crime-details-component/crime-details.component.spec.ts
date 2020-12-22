@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { of } from 'rxjs';
+import { CrimesService } from '../../Services/crimes-service/crimes.service';
 import { CrimeDetailsComponent } from './crime-details.component';
 
 describe('CrimeDetailsComponent', () => {
@@ -8,7 +9,8 @@ describe('CrimeDetailsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CrimeDetailsComponent ]
+      declarations: [ CrimeDetailsComponent ] ,
+      providers:    [ {provide: CrimesService} ]
     })
     .compileComponents();
   });
