@@ -7,6 +7,7 @@ This project is using the API of [the police forces of the United Kingdom](https
 * all the 44 forces of the United Kingdom.
 * Crimes commited in UK and which police force handled it.
 * The description and some information of each police force.
+
 To **use** this API:
 * We added [Angular material](https://v10.material.angular.io/) to have some beatiful effects.
 * We also added [charts](https://swimlane.gitbook.io/ngx-charts/) to a better view of crimes.
