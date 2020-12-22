@@ -9,10 +9,6 @@ import { ForceDetailsComponent } from './Components/force-details-component/forc
 import { ForcesListService } from './Services/forces-list-service/forces-list.service';
 import { MapService } from './map.service';
 import { HttpClientModule } from '@angular/common/http';
-<<<<<<< HEAD
-// import { HttpClient } from '@angular/common/http';
-=======
->>>>>>> 37825d2df755d017058e9f5dbf89dbd9bf9b7ab6
 import { ForceOfficersComponent } from './Components/force-officers-component/force-officers.component';
 import { CrimeComponent } from './Components/crime-component/crime.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -44,10 +40,6 @@ import { NavbarComponent } from './Components/navbar-component/navbar.component'
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-<<<<<<< HEAD
-    // HttpClient,
-=======
->>>>>>> 37825d2df755d017058e9f5dbf89dbd9bf9b7ab6
     FormsModule,
     ReactiveFormsModule,
     LeafletModule,
